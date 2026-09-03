@@ -1,0 +1,38 @@
+import './index.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import ImpactSection from './components/ImpactSection';
+import Inventions from './components/Inventions';
+import Achievements from './components/Achievements';
+import IntellectualProperty from './components/IntellectualProperty';
+import Recognition from './components/Recognition';
+import InnovationJourney from './components/InnovationJourney';
+import VisionForAustralia from './components/VisionForAustralia';
+import Documents from './components/Documents';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <ImpactSection />
+        <Inventions />
+        <Achievements />
+        <IntellectualProperty />
+        <Recognition />
+        <InnovationJourney />
+        <VisionForAustralia />
+        <Documents />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default App;
