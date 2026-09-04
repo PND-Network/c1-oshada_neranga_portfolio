@@ -46,7 +46,7 @@ export default function Achievements() {
             <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
               <img
                 src={trophy}
-                alt="G.H.D. Oshada Neranga with innovation awards and medals"
+                alt="G.H.D. Oshada Neranga with invention awards and medals"
                 style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', objectPosition: 'top' }}
                 loading="lazy"
               />
@@ -57,7 +57,7 @@ export default function Achievements() {
                 fontSize: 'var(--text-sm)',
                 lineHeight: 1.5,
               }}>
-                Innovation awards and medals — documented achievement record
+                Invention awards and medals — documented achievement record
               </div>
             </div>
           </div>
