@@ -2,7 +2,6 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import ImpactSection from './components/ImpactSection';
 import Inventions from './components/Inventions';
 import Achievements from './components/Achievements';
 import IntellectualProperty from './components/IntellectualProperty';
@@ -20,7 +19,6 @@ function App() {
       <main>
         <Hero />
         <About />
-        <ImpactSection />
         <Inventions />
         <Achievements />
         <IntellectualProperty />

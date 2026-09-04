@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__brand-name">G.H.D. Oshada Neranga</div>
-            <div className="footer__brand-title">Inventor · Technology Innovator</div>
+            <div className="footer__brand-title">Inventor</div>
             <p className="footer__tagline">
               Innovation · Sustainability · Engineering · Impact
             </p>

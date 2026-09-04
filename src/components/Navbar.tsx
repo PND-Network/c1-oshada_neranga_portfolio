@@ -4,7 +4,6 @@ import { X } from 'lucide-react';
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Innovation', href: '#innovation' },
   { label: 'Inventions', href: '#inventions' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Intellectual Property', href: '#ip' },
@@ -63,9 +62,9 @@ export default function Navbar() {
             aria-label="G.H.D. Oshada Neranga — Home"
           >
             <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-              G.H.D. Oshada Neranga
+              G.H.D. Oshada 
             </span>
-            <span className="navbar__title">Inventor · Technology Innovator</span>
+            <span className="navbar__title">Inventor</span>
           </a>
 
           <ul className="navbar__links" role="list">
