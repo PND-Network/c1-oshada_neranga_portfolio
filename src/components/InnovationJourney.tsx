@@ -33,7 +33,7 @@ const journeySteps = [
   },
   {
     step: "Stage 07",
-    title: "Intellectual Property Development",
+    title: "Patents Development",
     desc: "Two patent applications filed in Sri Lanka (LK/P/1/23235 and LK/P/1/23387) for the eco-friendly porcelain brick technology, establishing formal IP protection.",
   },
   {
@@ -61,7 +61,7 @@ export default function InnovationJourney() {
             From First Invention<br />to International Recognition
           </h2>
           <p className="section-subtitle text-center" style={{ margin: '0 auto var(--space-4)' }}>
-            A progressive journey through invention, competition, recognition, technology incubation, intellectual property development and international patent activity.
+            A progressive journey through invention, competition, recognition, technology incubation, Patents development and international patent activity.
           </p>
         </ScrollReveal>
 
