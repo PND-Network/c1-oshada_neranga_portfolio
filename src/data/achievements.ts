@@ -98,8 +98,8 @@ export const achievementTimeline: YearGroup[] = [
 ];
 
 export const statsData = [
-  { value: "Multiple", label: "Invention Awards" },
-  { value: "12+", label: "Inventions" },
+  { value: "Multiple", label: "Innovation Awards" },
+  { value: "6+", label: "Documented Inventions" },
   { value: "National &\nProvincial", label: "Recognition Levels" },
   { value: "3 Jurisdictions", label: "Patent Applications" },
 ];
