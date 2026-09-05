@@ -24,7 +24,7 @@ export default function Documents() {
             Evidence &amp; Recognition<br />Record
           </h2>
           <p className="section-subtitle">
-            Supporting documentation for all major achievements and intellectual property activities. Each document can be viewed directly as evidence of the innovation record described in this portfolio.
+            Supporting documentation for all major achievements and Patents activities. Each document can be viewed directly as evidence of the innovation record described in this portfolio.
           </p>
         </ScrollReveal>
 
