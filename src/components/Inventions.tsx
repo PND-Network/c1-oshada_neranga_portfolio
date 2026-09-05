@@ -104,7 +104,7 @@ export default function Inventions() {
             {/* IP status */}
             {activeInv.ipStatus && (
               <>
-                <h4 className="inv-modal__section-label">Intellectual Property</h4>
+                <h4 className="inv-modal__section-label">Patents</h4>
                 <div className="invention-card__badges">
                   <span className="badge badge--ip">
                     <Shield size={10} />
