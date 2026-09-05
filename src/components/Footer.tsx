@@ -8,7 +8,7 @@ export default function Footer() {
     { label: 'About', id: 'about' },
     { label: 'Inventions', id: 'inventions' },
     { label: 'Achievements', id: 'achievements' },
-    { label: 'Intellectual Property', id: 'ip' },
+    { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
     { label: 'Vision for Australia', id: 'vision' },
     { label: 'Documents', id: 'documents' },
