@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Inventions', href: '#inventions' },
   { label: 'Achievements', href: '#achievements' },
-  { label: 'Intellectual Property', href: '#ip' },
+  { label: 'Patents', href: '#ip' },
   { label: 'Recognition', href: '#recognition' },
   { label: 'Vision for Australia', href: '#vision' },
   { label: 'Documents', href: '#documents' },
@@ -62,7 +62,7 @@ export default function Navbar() {
             aria-label="G.H.D. Oshada Neranga — Home"
           >
             <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-              G.H.D. Oshada 
+              G.H.D. Oshada
             </span>
             <span className="navbar__title">Inventor</span>
           </a>
