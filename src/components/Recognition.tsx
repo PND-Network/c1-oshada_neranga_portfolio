@@ -1,7 +1,7 @@
 import { FileText } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import ceremony from '../assets/images/ceremony.jpg';
-import trophy from '../assets/images/trophy.jpg';
+import trophy from '../assets/images/image8_medals_awards.jpg';
 
 export default function Recognition() {
   const scrollToDocuments = () => {
