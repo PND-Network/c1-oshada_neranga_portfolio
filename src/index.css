@@ -1212,6 +1212,31 @@ ul {
   background: var(--color-white);
 }
 
+/* Horizontal photo gallery scrollbar */
+.achievements-gallery-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 162, 39, 0.55) rgba(0, 0, 0, 0.06);
+}
+
+.achievements-gallery-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.achievements-gallery-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+}
+
+.achievements-gallery-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #c9a227, #f5d06a);
+  border-radius: 999px;
+}
+
+.achievements-gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #a88220, #e8c050);
+}
+
+
 .timeline {
   position: relative;
   margin-top: var(--space-16);

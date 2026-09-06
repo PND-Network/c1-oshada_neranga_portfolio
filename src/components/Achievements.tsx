@@ -1,5 +1,5 @@
 import ScrollReveal from './ScrollReveal';
-import { achievementTimeline } from '../data/achievements';
+import { achievementTimeline, statsData } from '../data/achievements';
 import image8MedalsAwards from '../assets/images/image8_medals_awards.jpg';
 import image3PrizeGivingCeremony from '../assets/images/image_3.jpg';
 import image4RuhunaCompetition from '../assets/images/image_4.jpg';
@@ -20,183 +20,250 @@ export default function Achievements() {
           </p>
         </ScrollReveal>
 
-        {/* Photographic evidence gallery - magazine editorial layout */}
+        {/* Photographic evidence gallery - horizontal scroll strip */}
         <ScrollReveal>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1.8fr',
-            gridTemplateRows: 'auto auto',
-            gap: 'var(--space-4)',
-            margin: 'var(--space-12) 0',
-          }}>
+          <div style={{ position: 'relative', margin: 'var(--space-12) 0' }}>
 
-            {/* ROW 1 LEFT - image_8: portrait (contains full photo on white bg) */}
+            {/* Scroll-hint fade edges */}
+            <div style={{
+              position: 'absolute', top: 0, left: 0, bottom: 20,
+              width: 48, zIndex: 2, pointerEvents: 'none',
+              background: 'linear-gradient(to right, var(--color-offwhite, #f8f7f4), transparent)',
+              borderRadius: 'var(--radius-lg) 0 0 var(--radius-lg)',
+            }} />
+            <div style={{
+              position: 'absolute', top: 0, right: 0, bottom: 20,
+              width: 48, zIndex: 2, pointerEvents: 'none',
+              background: 'linear-gradient(to left, var(--color-offwhite, #f8f7f4), transparent)',
+              borderRadius: '0 var(--radius-lg) var(--radius-lg) 0',
+            }} />
+
+            {/* Scroll track */}
             <div
+              id="achievements-photo-gallery"
               style={{
-                position: 'relative',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 36px rgba(0,0,0,0.35)',
-                aspectRatio: '3/4',
-                background: '#f2f2f2',
+                display: 'flex',
+                gap: '20px',
+                overflowX: 'auto',
+                overflowY: 'hidden',
+                paddingBottom: '16px',
+                paddingLeft: '4px',
+                paddingRight: '4px',
+                scrollSnapType: 'x mandatory',
+                WebkitOverflowScrolling: 'touch',
+                /* Custom scrollbar via inline style doesn't work — handled by class below */
               }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.04)'; }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; }}
+              className="achievements-gallery-scroll"
             >
-              <img
-                src={image8MedalsAwards}
-                alt="G.H.D. Oshada Neranga proudly displaying gold and bronze awards at the G/Udugama National College Prize Giving"
+              {/* Card 1 — Medals & Awards */}
+              <div
                 style={{
-                  position: 'absolute', inset: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'contain', objectPosition: 'center',
-                  transition: 'transform 0.5s ease',
+                  position: 'relative',
+                  flex: '0 0 300px',
+                  height: '380px',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.30)',
+                  scrollSnapAlign: 'start',
+                  background: '#f2f2f2',
+                  cursor: 'pointer',
                 }}
-                loading="lazy"
-              />
-              <div style={{
-                position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)',
-                background: 'linear-gradient(135deg, #c9a227, #f5d06a)',
-                color: '#1a0f00', fontWeight: 700, fontSize: 'var(--text-xs)',
-                padding: '4px 12px', borderRadius: '999px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              }}>🏅 Gold &amp; Bronze</div>
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                background: 'linear-gradient(to top, rgba(5,10,30,0.92) 0%, rgba(5,10,30,0.55) 50%, transparent 100%)',
-                padding: 'var(--space-10) var(--space-4) var(--space-4)',
-              }}>
-                <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>🥇🥉 Gold &amp; Bronze Awards</div>
-                <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: 'var(--text-sm)', lineHeight: 1.5, margin: 0 }}>
-                  G/Udugama National College Prize Giving
-                </p>
+                onMouseEnter={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 56px rgba(0,0,0,0.42)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.30)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <img
+                  src={image8MedalsAwards}
+                  alt="G.H.D. Oshada Neranga proudly displaying gold and bronze awards at the G/Udugama National College Prize Giving"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'contain', objectPosition: 'center',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  loading="lazy"
+                />
+                
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(to top, rgba(5,10,30,0.93) 0%, rgba(5,10,30,0.5) 55%, transparent 100%)',
+                  padding: '48px 16px 16px',
+                }}>
+                  <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>🥇🥉 Gold &amp; Bronze Awards</div>
+                  <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                    G/Udugama National College Prize Giving
+                  </p>
+                </div>
               </div>
+
+              {/* Card 2 — Prize Giving Ceremony */}
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '0 0 300px',
+                  height: '380px',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.30)',
+                  scrollSnapAlign: 'start',
+                  cursor: 'pointer',
+                  transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 56px rgba(0,0,0,0.42)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.30)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <img
+                  src={image3PrizeGivingCeremony}
+                  alt="G.H.D. Oshada Neranga receiving the New Inventions Award from Vice Dean Senior Professor Sujeewa Amarasena, Faculty of Medicine, University of Ruhuna"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'cover', objectPosition: 'center 20%',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  loading="lazy"
+                />
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.6) 50%, transparent 100%)',
+                  padding: '52px 16px 16px',
+                }}>
+                  <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>🎓 Prize Giving Ceremony</div>
+                  <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                    New Inventions Award - presented by Vice Dean Senior Professor Sujeewa Amarasena, Faculty of Medicine, University of Ruhuna
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 — Southern Province Competition */}
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '0 0 300px',
+                  height: '380px',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.30)',
+                  scrollSnapAlign: 'start',
+                  cursor: 'pointer',
+                  transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 56px rgba(0,0,0,0.42)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.30)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <img
+                  src={image4RuhunaCompetition}
+                  alt="G.H.D. Oshada Neranga with a gold medal and certificates at the Southern Province New Invention Competition, University of Ruhuna 2023"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'cover', objectPosition: 'center 15%',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  loading="lazy"
+                />
+               
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.6) 45%, transparent 100%)',
+                  padding: '48px 16px 16px',
+                }}>
+                  <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>🏆 Provincial Competition</div>
+                  <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                    Southern Province New Invention Competition - University of Ruhuna, 2023
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4 — RIIE Certificates */}
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '0 0 300px',
+                  height: '380px',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.30)',
+                  scrollSnapAlign: 'start',
+                  cursor: 'pointer',
+                  transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 56px rgba(0,0,0,0.42)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.30)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <img
+                  src={image7RiieCertificates}
+                  alt="Ruhuna Invention and Innovation Competition (RIIE) 2023 certificates awarded to G.H.D. Oshada Neranga"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'cover', objectPosition: 'center',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  loading="lazy"
+                />
+            
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.6) 50%, transparent 100%)',
+                  padding: '48px 16px 16px',
+                }}>
+                  <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>📜 RIIE 2023</div>
+                  <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                    Ruhuna Invention &amp; Innovation Competition (RIIE) Certificates - 2023
+                  </p>
+                </div>
+              </div>
+
             </div>
 
-            {/* ROW 1 RIGHT - image_3: ceremony, fills row height */}
-            <div
-              style={{
-                position: 'relative',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 36px rgba(0,0,0,0.35)',
-              }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.05)'; }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; }}
-            >
-              <img
-                src={image3PrizeGivingCeremony}
-                alt="G.H.D. Oshada Neranga receiving the New Inventions Award from Vice Dean Senior Professor Sujeewa Amarasena, Faculty of Medicine, University of Ruhuna"
-                style={{
-                  position: 'absolute', inset: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'cover', objectPosition: 'center 20%',
-                  transition: 'transform 0.5s ease',
-                }}
-                loading="lazy"
-              />
-              <div style={{
-                position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)',
-                background: 'linear-gradient(135deg, #7c3aed, #a78bfa)',
-                color: '#fff', fontWeight: 700, fontSize: 'var(--text-xs)',
-                padding: '4px 12px', borderRadius: '999px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              }}>🎓 University of Ruhuna</div>
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.65) 45%, transparent 100%)',
-                padding: 'var(--space-12) var(--space-5) var(--space-4)',
-              }}>
-                <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>🎓 Prize Giving Ceremony</div>
-                <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: 'var(--text-sm)', lineHeight: 1.5, margin: 0 }}>
-                  New Inventions Award — presented by Vice Dean Senior Professor Sujeewa Amarasena, Faculty of Medicine, University of Ruhuna
-                </p>
-              </div>
-            </div>
-
-            {/* ROW 2 LEFT - image_4: Southern Province competition */}
-            <div
-              style={{
-                position: 'relative',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 36px rgba(0,0,0,0.35)',
-                aspectRatio: '3/4',
-              }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.05)'; }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; }}
-            >
-              <img
-                src={image4RuhunaCompetition}
-                alt="G.H.D. Oshada Neranga with a gold medal and certificates at the Southern Province New Invention Competition, University of Ruhuna 2023"
-                style={{
-                  position: 'absolute', inset: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'cover', objectPosition: 'center 15%',
-                  transition: 'transform 0.5s ease',
-                }}
-                loading="lazy"
-              />
-              <div style={{
-                position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)',
-                background: 'linear-gradient(135deg, #0d7a4e, #34d399)',
-                color: '#fff', fontWeight: 700, fontSize: 'var(--text-xs)',
-                padding: '4px 12px', borderRadius: '999px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              }}>🏆 2023</div>
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.65) 45%, transparent 100%)',
-                padding: 'var(--space-10) var(--space-4) var(--space-3)',
-              }}>
-                <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>🏆 Provincial Competition</div>
-                <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: 'var(--text-sm)', lineHeight: 1.5, margin: 0 }}>
-                  Southern Province New Invention Competition — University of Ruhuna, 2023
-                </p>
-              </div>
-            </div>
-
-            {/* ROW 2 RIGHT - image_7 (RIIE): certificates fills row height */}
-            <div
-              style={{
-                position: 'relative',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 36px rgba(0,0,0,0.35)',
-              }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.05)'; }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; }}
-            >
-              <img
-                src={image7RiieCertificates}
-                alt="Ruhuna Invention and Innovation Competition (RIIE) 2023 certificates awarded to G.H.D. Oshada Neranga"
-                style={{
-                  position: 'absolute', inset: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'cover', objectPosition: 'center',
-                  transition: 'transform 0.5s ease',
-                }}
-                loading="lazy"
-              />
-              <div style={{
-                position: 'absolute', top: 'var(--space-3)', left: 'var(--space-3)',
-                background: 'linear-gradient(135deg, #b45309, #fbbf24)',
-                color: '#fff', fontWeight: 700, fontSize: 'var(--text-xs)',
-                padding: '4px 12px', borderRadius: '999px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              }}>📜 RIIE 2023</div>
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.65) 50%, transparent 100%)',
-                padding: 'var(--space-10) var(--space-5) var(--space-3)',
-              }}>
-                <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>📜 RIIE 2023</div>
-                <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: 'var(--text-sm)', lineHeight: 1.5, margin: 0 }}>
-                  Ruhuna Invention &amp; Innovation Competition (RIIE) Certificates — 2023
-                </p>
-              </div>
-            </div>
-
+            {/* Scroll hint label */}
+            <p style={{
+              textAlign: 'center',
+              fontSize: '12px',
+              color: 'var(--color-text-muted)',
+              letterSpacing: '0.08em',
+              marginTop: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+            }}>
+              <span style={{ fontSize: '14px' }}>←</span>
+              Scroll to view all photos
+              <span style={{ fontSize: '14px' }}>→</span>
+            </p>
           </div>
         </ScrollReveal>
 
