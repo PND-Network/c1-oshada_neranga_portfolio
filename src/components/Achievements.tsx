@@ -20,6 +20,18 @@ export default function Achievements() {
           </p>
         </ScrollReveal>
 
+        {/* Stats bar */}
+        <ScrollReveal delay={1}>
+          <div className="achievements__stats">
+            {statsData.map((stat, i) => (
+              <div key={i} className="achievements__stat">
+                <div className="achievements__stat-value">{stat.value}</div>
+                <div className="achievements__stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
         {/* Photographic evidence gallery - horizontal scroll strip */}
         <ScrollReveal>
           <div style={{ position: 'relative', margin: 'var(--space-12) 0' }}>
