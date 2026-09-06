@@ -5,7 +5,7 @@ const visionAreas = [
   {
     icon: <Leaf size={20} />,
     title: 'Sustainable Construction Technologies',
-    desc: 'I aim to contribute eco-friendly construction material innovations — particularly waste-to-resource technologies — to Australia\'s sustainable building sector.',
+    desc: 'I aim to contribute eco-friendly construction material innovations - particularly waste-to-resource technologies — to Australia\'s sustainable building sector.',
   },
   {
     icon: <Recycle size={20} />,
@@ -58,7 +58,7 @@ export default function VisionForAustralia() {
                 Vision for<br />Australia
               </h2>
               <p className="section-subtitle section-subtitle--light" style={{ marginBottom: 'var(--space-8)' }}>
-                The following represents a forward-looking perspective on how existing innovation experience, intellectual property activity and problem-solving capability could contribute to Australia's innovation ecosystem.
+                The following represents a forward-looking perspective on how existing innovation experience, Patents activity and problem-solving capability could contribute to Australia's innovation ecosystem.
               </p>
               <div style={{
                 padding: 'var(--space-6)',

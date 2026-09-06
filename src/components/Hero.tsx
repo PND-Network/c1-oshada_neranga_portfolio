@@ -15,7 +15,7 @@ export default function Hero() {
         {/* Content */}
         <div className="hero__content">
           <div className="hero__eyebrow" aria-label="Professional identity">
-            Innovation Portfolio
+            Inventions for impact
           </div>
 
           <h1 className="hero__name">
@@ -24,7 +24,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__profession">
-            <strong>Inventor</strong> · <strong>Technology Innovator</strong> · <strong>Entrepreneurial Problem Solver</strong>
+            <strong>Inventor</strong> · <strong>Entrepreneurial Problem Solver</strong>
           </p>
 
           <blockquote className="hero__statement">
@@ -37,7 +37,7 @@ export default function Hero() {
               className="btn btn-gold btn-lg"
               onClick={() => scrollTo('inventions')}
             >
-              Explore Innovations
+              Explore Inventions
             </button>
             <button
               id="hero-achievements-btn"
@@ -49,13 +49,13 @@ export default function Hero() {
           </div>
 
           <a
-            href="#documents"
+            href="/G.H.D.%20Oshada%20Neranga%20CV.pdf"
+            download="G.H.D. Oshada Neranga CV.pdf"
             className="hero__download"
-            onClick={(e) => { e.preventDefault(); scrollTo('documents'); }}
-            aria-label="Download professional profile"
+            aria-label="Download professional CV"
           >
             <Download size={13} />
-            Download Professional Profile
+            Download Professional CV
           </a>
         </div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="hero__portrait-frame-2" />
             <img
               src={portrait}
-              alt="G.H.D. Oshada Neranga — Inventor and Technology Innovator"
+              alt="G.H.D. Oshada Neranga — Inventor"
               className="hero__portrait"
               loading="eager"
               fetchPriority="high"

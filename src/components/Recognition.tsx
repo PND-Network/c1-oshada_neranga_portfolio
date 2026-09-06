@@ -1,7 +1,7 @@
 import { FileText } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import ceremony from '../assets/images/ceremony.jpg';
-import trophy from '../assets/images/trophy.jpg';
+import trophy from '../assets/images/image8_medals_awards.jpg';
 
 export default function Recognition() {
   const scrollToDocuments = () => {
@@ -107,11 +107,11 @@ export default function Recognition() {
               <div className="recognition__img-card">
                 <img
                   src={trophy}
-                  alt="G.H.D. Oshada Neranga with innovation awards"
+                  alt="G.H.D. Oshada Neranga with invention awards"
                   loading="lazy"
                 />
                 <div className="recognition__img-label">
-                  Multiple innovation awards and medals
+                  Multiple invention awards and medals
                 </div>
               </div>
             </ScrollReveal>

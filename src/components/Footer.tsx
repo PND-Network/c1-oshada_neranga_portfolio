@@ -8,7 +8,7 @@ export default function Footer() {
     { label: 'About', id: 'about' },
     { label: 'Inventions', id: 'inventions' },
     { label: 'Achievements', id: 'achievements' },
-    { label: 'Intellectual Property', id: 'ip' },
+    { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
     { label: 'Vision for Australia', id: 'vision' },
     { label: 'Documents', id: 'documents' },
@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__brand-name">G.H.D. Oshada Neranga</div>
-            <div className="footer__brand-title">Inventor · Technology Innovator</div>
+            <div className="footer__brand-title">Inventor</div>
             <p className="footer__tagline">
               Innovation · Sustainability · Engineering · Impact
             </p>

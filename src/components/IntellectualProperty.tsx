@@ -12,10 +12,10 @@ export default function IntellectualProperty() {
       <div className="container">
         <ScrollReveal>
           <div className="ip-intro">
-            <span className="section-label">Intellectual Property</span>
+            <span className="section-label">Patents</span>
             <div className="gold-line gold-line--center" />
             <h2 className="section-title section-title--light text-center">
-              Intellectual Property &amp;<br />Global Protection
+              Patents &amp;<br />Global Protection
             </h2>
             <p className="section-subtitle section-subtitle--light text-center">
               From Sri Lankan patent applications to international filings in Australia and the United Kingdom, the flagship innovation is protected across three jurisdictions.
@@ -72,7 +72,7 @@ export default function IntellectualProperty() {
                 "Eco-Friendly, High-Strength Construction Brick Manufactured from Waste Porcelain Using High-Pressure Cold-Bonding Technology with a Ball Clay Catalyst and Method of Production Thereof"
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>
-                Patent applications have been filed in Australia (IP Australia, Application No. 2026905817) and the United Kingdom (UK Intellectual Property Office, Application GB2613415.5). These applications are currently pending — they have been filed and accepted for processing, but have not yet been examined or granted.
+                Patent applications have been filed in Australia (IP Australia, Application No. 2026905817) and the United Kingdom (UK Patents Office, Application GB2613415.5). These applications are currently pending — they have been filed and accepted for processing, but have not yet been examined or granted.
               </p>
             </div>
             <button
@@ -88,7 +88,7 @@ export default function IntellectualProperty() {
         </ScrollReveal>
 
         <p className="ip-disclaimer">
-          Note: "Patent Application Filed" indicates that an application has been submitted to the relevant intellectual property authority. It does not indicate that a patent has been examined, published or granted.
+          Note: "Patent Application Filed" indicates that an application has been submitted to the relevant Patents authority. It does not indicate that a patent has been examined, published or granted.
         </p>
       </div>
     </section>

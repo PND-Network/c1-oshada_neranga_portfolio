@@ -46,6 +46,6 @@ export const patents: Patent[] = [
     status: "Patent Application Filed",
     title: "Eco-Friendly, High-Strength Construction Brick Manufactured from Waste Porcelain Using High-Pressure Cold-Bonding Technology with a Ball Clay Catalyst and Method of Production Thereof",
     featured: true,
-    notes: "Filed with UK Intellectual Property Office. Application filed — not yet granted.",
+    notes: "Filed with UK Patents Office. Application filed — not yet granted.",
   },
 ];

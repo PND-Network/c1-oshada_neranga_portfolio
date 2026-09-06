@@ -3,15 +3,12 @@ import portrait from '../assets/images/portrait.jpg';
 
 const domains = [
   'Sustainable Technology',
-  'Environmental Innovation',
-  'Engineering Innovation',
   'Public Safety',
   'Disaster Preparedness',
-  'Intellectual Property',
-  'Technology Commercialisation',
   'Waste Valorisation',
   'Construction Technology',
   'Surveillance Systems',
+  'Technology Commercialisation',
 ];
 
 export default function About() {
@@ -32,7 +29,7 @@ export default function About() {
                 />
                 <div className="about__image-caption">
                   <strong>G.H.D. Oshada Neranga</strong>
-                  <span>Inventor · Technology Innovator</span>
+                  <span>Inventor</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -48,13 +45,13 @@ export default function About() {
 
             <ScrollReveal delay={1}>
               <p className="about__bio">
-                G.H.D. Oshada Neranga is an emerging inventor and technology innovator whose work centres on solving practical, everyday engineering problems through original thinking and inventive application. His innovation journey began during his school years at Udugama National College, where early experimentation grew into a systematic approach to invention and problem solving.
+                G.H.D. Oshada Neranga is an emerging inventor whose work centres on solving practical, everyday engineering problems through original thinking and inventive application. His innovation journey began during his school years at G/Udugama National College, where early experimentation grew into a systematic approach to invention and problem solving.
               </p>
               <p className="about__bio">
-                His inventions span a broad range of applied domains — from sustainable construction and environmental waste valorisation to public safety, surveillance, disaster preparedness, and practical engineering. He has developed and presented multiple original inventions at national-level competition platforms, including the Ruhuna Invention & Innovation Exhibition (RIIE), co-organised by the University of Ruhuna and the Sri Lanka Inventors Commission.
+                His inventions span a broad range of applied domains from sustainable construction and environmental waste valorisation to public safety, surveillance, disaster preparedness, and practical engineering. He has developed and presented multiple original inventions at national-level competition platforms, including the Ruhuna Invention & Innovation Exhibition (RIIE), co-organised by the University of Ruhuna and the Sri Lanka Inventors Commission.
               </p>
               <p className="about__bio">
-                A defining feature of his work is the progression from invention concept through to intellectual property development. His flagship eco-friendly construction brick technology — which converts waste porcelain into high-strength building materials — has been recognised at the national level, supported by the Southern Technology Incubation Centre (STIC) at the University of Ruhuna, and is the subject of patent applications filed in Sri Lanka, Australia and the United Kingdom.
+                A defining feature of his work is the progression from invention concept through to Patents development. His flagship eco-friendly construction brick technology which converts waste porcelain into high-strength building materials has been recognised at the national level, supported by the Southern Technology Incubation Centre (STIC) at the University of Ruhuna, and is the subject of patent applications filed in Sri Lanka, Australia and the United Kingdom.
               </p>
               <p className="about__bio">
                 His profile has been recognised by Prof. KKLB Adikaram, Director of the Southern Technology Incubation Centre, University of Ruhuna, who has commended his ability to transform innovative ideas into practical technologies with social, industrial and environmental value.
@@ -63,7 +60,7 @@ export default function About() {
 
             <ScrollReveal delay={2}>
               <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-gold)', marginBottom: 'var(--space-3)' }}>
-                Core Innovation Domains
+                Core Invention Domains
               </h3>
               <div className="about__domains">
                 {domains.map((d) => (
