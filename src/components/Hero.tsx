@@ -1,4 +1,4 @@
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronDown, Download, ExternalLink } from 'lucide-react';
 import portrait from '../assets/images/portrait.jpg';
 
 export default function Hero() {
@@ -48,15 +48,28 @@ export default function Hero() {
             </button>
           </div>
 
-          <a
-            href="/G.H.D.%20Oshada%20Neranga%20CV.pdf"
-            download="G.H.D. Oshada Neranga CV.pdf"
-            className="hero__download"
-            aria-label="Download professional CV"
-          >
-            <Download size={13} />
-            Download Professional CV
-          </a>
+          <div className="hero__meta-links">
+            <a
+              href="/G.H.D.%20Oshada%20Neranga%20CV.pdf"
+              download="G.H.D. Oshada Neranga CV.pdf"
+              className="hero__download"
+              aria-label="Download professional CV"
+            >
+              <Download size={13} />
+              Download Professional CV
+            </a>
+
+            <a
+              href="https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__google-verify"
+              aria-label="Verify G.H.D. Oshada Neranga on Google Search"
+            >
+              <ExternalLink size={13} />
+              Verify on Google
+            </a>
+          </div>
         </div>
 
         {/* Portrait */}
