@@ -60,7 +60,7 @@ export default function Navbar() {
             aria-label="G.H.D. Oshada Neranga — Home"
           >
             <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-              G.H.D. Oshada
+              G.H.D. Oshada Neranga
             </span>
             <span className="navbar__title">Inventor</span>
           </a>
