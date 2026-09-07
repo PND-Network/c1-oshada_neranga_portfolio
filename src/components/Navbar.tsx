@@ -8,8 +8,6 @@ const navLinks = [
   { label: 'Achievements', href: '#achievements' },
   { label: 'Patents', href: '#ip' },
   { label: 'Recognition', href: '#recognition' },
-  { label: 'Vision for Australia', href: '#vision' },
-  { label: 'Documents', href: '#documents' },
   { label: 'Contact', href: '#contact' },
 ];
 

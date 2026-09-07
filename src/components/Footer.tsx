@@ -10,8 +10,6 @@ export default function Footer() {
     { label: 'Achievements', id: 'achievements' },
     { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
-    { label: 'Vision for Australia', id: 'vision' },
-    { label: 'Documents', id: 'documents' },
     { label: 'Contact', id: 'contact' },
   ];
 
@@ -32,7 +30,7 @@ export default function Footer() {
           <div>
             <div className="footer__col-title">Navigation</div>
             <ul className="footer__links" role="list">
-              {navLinks.slice(0, 5).map((link) => (
+              {navLinks.slice(0, 4).map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
@@ -48,9 +46,9 @@ export default function Footer() {
 
           {/* More links */}
           <div>
-            <div className="footer__col-title">Evidence &amp; Contact</div>
+            <div className="footer__col-title">Contact &amp; Details</div>
             <ul className="footer__links" role="list">
-              {navLinks.slice(5).map((link) => (
+              {navLinks.slice(4).map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
