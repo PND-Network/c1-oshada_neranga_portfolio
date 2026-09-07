@@ -1,12 +1,12 @@
-import { FileText } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, ExternalLink, Download } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import Modal from './Modal';
 import ceremony from '../assets/images/ceremony.jpg';
-import trophy from '../assets/images/image8_medals_awards.jpg';
+import image4 from '../assets/images/image_4.jpg';
 
 export default function Recognition() {
-  const scrollToDocuments = () => {
-    document.getElementById('documents')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const [isCommendationOpen, setIsCommendationOpen] = useState(false);
 
   return (
     <section id="recognition" className="recognition section-py">
@@ -25,22 +25,19 @@ export default function Recognition() {
             <ScrollReveal>
               <div className="recognition__letter">
                 <div className="recognition__letter-label">
-                  Commendation — Southern Technology Incubation Centre, University of Ruhuna
+                  Commendation - Southern Technology Incubation Centre, University of Ruhuna
                 </div>
 
-                <div className="recognition__quote-mark" aria-hidden="true">"</div>
+                <div className="recognition__quote-wrapper">
+                  <div className="recognition__quote-mark recognition__quote-mark--open" aria-hidden="true">“</div>
+                  <blockquote className="recognition__quote-text">
+                    “I have witnessed his exceptional creativity, dedication, and outstanding ability to transform innovative ideas into practical technologies with significant social and industrial value.”
+                  </blockquote>
+                  <div className="recognition__quote-mark recognition__quote-mark--close" aria-hidden="true">”</div>
+                </div>
 
-                <blockquote className="recognition__quote-text">
-                  Oshada is an exceptionally creative and dedicated innovator with the ability to transform innovative ideas into practical technologies that carry real social, industrial and environmental value.
-                </blockquote>
-
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--color-text-muted)', lineHeight: 1.75, marginBottom: 'var(--space-6)' }}>
-                  The commendation letter from the Southern Technology Incubation Centre (STIC), University of Ruhuna, highlights Oshada's capacity to develop inventions that address real industrial, environmental, disaster management and public safety challenges. It identifies his work as having both practical social value and potential for commercialisation.
-                </p>
-
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)', lineHeight: 1.75, marginBottom: 'var(--space-6)', padding: 'var(--space-5)', background: 'var(--color-offwhite)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--color-gold)' }}>
-                  <strong style={{ display: 'block', color: 'var(--color-navy)', marginBottom: 'var(--space-2)' }}>Areas specifically identified in the commendation:</strong>
-                  Industry application · Environmental sustainability · Disaster management · Public safety · Practical innovation · Technology incubation support
+                <p className="recognition__content-p">
+                  The official commendation letter from the Southern Technology Incubation Centre (STIC), University of Ruhuna, highlights Oshada's capacity to develop inventions that address real industrial, environmental, disaster management and public safety challenges. It confirms his projects were selected for commercialisation funding through STIC, progressed toward industrial implementation, and entered the patent protection process.
                 </p>
 
                 <div className="recognition__attribution">
@@ -52,39 +49,12 @@ export default function Recognition() {
                   <button
                     id="recognition-view-commendation-btn"
                     className="btn btn-primary"
-                    onClick={scrollToDocuments}
+                    onClick={() => setIsCommendationOpen(true)}
                   >
                     <FileText size={14} />
                     View Commendation Letter
                   </button>
                 </div>
-              </div>
-            </ScrollReveal>
-
-            {/* SLIC recognition */}
-            <ScrollReveal delay={1}>
-              <div style={{
-                marginTop: 'var(--space-8)',
-                padding: 'var(--space-6) var(--space-8)',
-                background: 'var(--color-white)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-gray-200)',
-                boxShadow: 'var(--shadow-sm)',
-              }}>
-                <div className="recognition__letter-label">
-                  Sri Lanka Inventors Commission (SLIC)
-                </div>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--color-text-body)', lineHeight: 1.75, marginBottom: 'var(--space-5)' }}>
-                  The Sri Lanka Inventors Commission (SLIC) is the national body responsible for promoting and recognising invention and innovation in Sri Lanka. Official correspondence and awards documentation from SLIC confirms recognition of Oshada's inventions at national-level competitions, including the Ruhuna Invention &amp; Innovation Exhibition.
-                </p>
-                <button
-                  id="recognition-slic-btn"
-                  className="btn btn-outline btn-sm"
-                  onClick={scrollToDocuments}
-                >
-                  <FileText size={12} />
-                  View SLIC Documentation
-                </button>
               </div>
             </ScrollReveal>
           </div>
@@ -99,25 +69,64 @@ export default function Recognition() {
                   loading="lazy"
                 />
                 <div className="recognition__img-label">
-                  Award ceremony — national innovation recognition
+                  New Inventions Award - presented by Vice Dean Senior Professor Sujeewa Amarasena, Faculty of Medicine, University of Ruhuna
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={1}>
               <div className="recognition__img-card">
                 <img
-                  src={trophy}
+                  src={image4}
                   alt="G.H.D. Oshada Neranga with invention awards"
                   loading="lazy"
                 />
                 <div className="recognition__img-label">
-                  Multiple invention awards and medals
+                  Southern Province New Invention Competition - University of Ruhuna, 2023
                 </div>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </div>
+
+      {/* Commendation Letter PDF Modal */}
+      <Modal
+        isOpen={isCommendationOpen}
+        onClose={() => setIsCommendationOpen(false)}
+        title="Official Commendation Letter - University of Ruhuna"
+      >
+        <div className="pdf-modal">
+          <div className="pdf-modal__toolbar">
+            <span className="pdf-modal__meta">Issued: 01 August 2026 · Southern Technology Incubation Centre (STIC)</span>
+            <div className="pdf-modal__buttons">
+              <a
+                href="/Commendation%20Letter.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline btn-sm"
+              >
+                <ExternalLink size={13} />
+                Open in New Tab
+              </a>
+              <a
+                href="/Commendation%20Letter.pdf"
+                download="Commendation Letter - Oshada Neranga.pdf"
+                className="btn btn-primary btn-sm"
+              >
+                <Download size={13} />
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div className="pdf-modal__frame-wrap">
+            <iframe
+              src="/Commendation%20Letter.pdf#toolbar=1"
+              title="Official Commendation Letter - Southern Technology Incubation Centre, University of Ruhuna"
+              className="pdf-modal__iframe"
+            />
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 }

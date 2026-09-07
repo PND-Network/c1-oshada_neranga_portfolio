@@ -6,7 +6,6 @@ import Inventions from './components/Inventions';
 import Achievements from './components/Achievements';
 import IntellectualProperty from './components/IntellectualProperty';
 import Recognition from './components/Recognition';
-import InnovationJourney from './components/InnovationJourney';
 import VisionForAustralia from './components/VisionForAustralia';
 import Documents from './components/Documents';
 import Contact from './components/Contact';
@@ -23,7 +22,6 @@ function App() {
         <Achievements />
         <IntellectualProperty />
         <Recognition />
-        <InnovationJourney />
         <VisionForAustralia />
         <Documents />
         <Contact />
