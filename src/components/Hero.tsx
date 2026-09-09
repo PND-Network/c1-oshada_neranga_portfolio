@@ -46,26 +46,32 @@ export default function Hero() {
           </div>
 
           <div className="hero__meta-links">
-            <a
-              href="/G.H.D.%20Oshada%20Neranga%20CV.pdf"
-              download="G.H.D. Oshada Neranga CV.pdf"
+            <button
+              type="button"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/G.H.D.%20Oshada%20Neranga%20CV.pdf';
+                link.download = 'G.H.D. Oshada Neranga CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="hero__download"
               aria-label="Download professional CV"
             >
               <Download size={13} />
               Download Professional CV
-            </a>
+            </button>
 
-            <a
-              href="https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => window.open('https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8', '_blank', 'noopener,noreferrer')}
               className="hero__google-verify"
               aria-label="Verify G.H.D. Oshada Neranga on Google Search"
             >
               <ExternalLink size={13} />
               Verify on Google
-            </a>
+            </button>
           </div>
         </div>
 
@@ -94,7 +100,7 @@ export default function Hero() {
 
             {/* Layer 3: High-depth badge */}
             <div className="hero__portrait-badge">
-              Sri Lankan<br />Inventor
+              Sri Lankan Inventor
             </div>
           </div>
         </div>

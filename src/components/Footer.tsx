@@ -33,10 +33,9 @@ export default function Footer() {
               Developing patented engineering solutions in electrical safety, sustainable agriculture, and advanced mechanical systems.
             </p>
             <div className="footer__socials">
-              <a
-                href="https://www.linkedin.com/in/g-h-d-oshada-neranga-339389417?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => window.open('https://www.linkedin.com/in/g-h-d-oshada-neranga-339389417?utm_source=share_via&utm_content=profile&utm_medium=member_android', '_blank', 'noopener,noreferrer')}
                 className="footer__social-btn"
                 aria-label="LinkedIn"
               >
@@ -45,43 +44,43 @@ export default function Footer() {
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
-              </a>
-              <a
-                href="https://x.com/OshadaNeranga"
-                target="_blank"
-                rel="noopener noreferrer"
+              </button>
+              <button
+                type="button"
+                onClick={() => window.open('https://x.com/OshadaNeranga', '_blank', 'noopener,noreferrer')}
                 className="footer__social-btn"
                 aria-label="X (Twitter)"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61590850472852"
-                target="_blank"
-                rel="noopener noreferrer"
+              </button>
+              <button
+                type="button"
+                onClick={() => window.open('https://www.facebook.com/profile.php?id=61590850472852', '_blank', 'noopener,noreferrer')}
                 className="footer__social-btn"
                 aria-label="Facebook"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
-              </a>
-              <a
-                href="mailto:Oshadaneranga4@gmail.com"
+              </button>
+              <button
+                type="button"
+                onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
                 className="footer__social-btn"
                 aria-label="Email"
               >
                 <Mail size={18} />
-              </a>
-              <a
-                href="tel:+94764689418"
+              </button>
+              <button
+                type="button"
+                onClick={() => { window.location.href = 'tel:+94764689418'; }}
                 className="footer__social-btn"
                 aria-label="Phone"
               >
                 <Phone size={18} />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -91,13 +90,13 @@ export default function Footer() {
             <ul className="footer__links" role="list">
               {navLinks.map((link) => (
                 <li key={link.id}>
-                  <a
-                    href={`#${link.id}`}
+                  <button
+                    type="button"
                     className="footer__link"
-                    onClick={(e) => { e.preventDefault(); scrollTo(link.id); }}
+                    onClick={() => scrollTo(link.id)}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -107,7 +106,11 @@ export default function Footer() {
           <div className="footer__contact-col">
             <div className="footer__col-title">Direct Inquiries</div>
             <div className="footer__contact-list">
-              <a href="mailto:Oshadaneranga4@gmail.com" className="footer__contact-item">
+              <button
+                type="button"
+                onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
+                className="footer__contact-item"
+              >
                 <div className="footer__contact-icon">
                   <Mail size={16} />
                 </div>
@@ -115,8 +118,12 @@ export default function Footer() {
                   <span className="footer__contact-label">Email</span>
                   <span className="footer__contact-value">Oshadaneranga4@gmail.com</span>
                 </div>
-              </a>
-              <a href="tel:+94764689418" className="footer__contact-item">
+              </button>
+              <button
+                type="button"
+                onClick={() => { window.location.href = 'tel:+94764689418'; }}
+                className="footer__contact-item"
+              >
                 <div className="footer__contact-icon">
                   <Phone size={16} />
                 </div>
@@ -124,7 +131,7 @@ export default function Footer() {
                   <span className="footer__contact-label">Phone</span>
                   <span className="footer__contact-value">+94 76 468 9418</span>
                 </div>
-              </a>
+              </button>
             </div>
 
             <button

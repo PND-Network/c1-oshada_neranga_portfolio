@@ -428,6 +428,7 @@ ul {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  text-align: left;
 }
 
 .navbar__name {
@@ -545,6 +546,8 @@ ul {
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--color-gray-100);
   transition: color var(--transition-fast);
+  text-align: left;
+  width: 100%;
 }
 
 .navbar__mobile-link:hover {
@@ -585,8 +588,8 @@ ul {
 
 .hero__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-20);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-16);
   align-items: center;
   min-height: 100vh;
   padding-top: var(--nav-height);
@@ -594,6 +597,8 @@ ul {
 
 .hero__content {
   padding: var(--space-20) 0;
+  z-index: 2;
+  position: relative;
 }
 
 .hero__eyebrow {
@@ -705,37 +710,60 @@ ul {
 .hero__image-col {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-20) 0;
+  justify-content: flex-end;
   position: relative;
+  margin-top: calc(-1 * var(--space-4));
 }
 
 .hero__portrait-stage {
   position: relative;
-  width: 380px;
-  max-width: 100%;
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Atmospheric glow behind the portrait */
 .hero__portrait-halo {
   position: absolute;
-  inset: -24px;
-  background: radial-gradient(circle, rgba(197, 180, 149, 0.16) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 75%);
-  filter: blur(28px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(ellipse at 60% 40%, rgba(197, 180, 149, 0.12) 0%, transparent 65%);
+  filter: blur(40px);
   pointer-events: none;
+  z-index: 0;
 }
 
+/* Editorial photo frame — tall, slim, clean */
 .hero__portrait-card {
   position: relative;
   width: 100%;
-  height: 100%;
-  border-radius: var(--radius-xl);
+  aspect-ratio: 3 / 4;
+  max-height: calc(100vh - var(--nav-height) - 36px);
+  border-radius: 2px 24px 2px 24px;
   overflow: hidden;
   box-shadow:
-    0 25px 60px -15px rgba(0, 0, 0, 0.85),
-    0 0 0 1px rgba(255, 255, 255, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  background: #11141A;
+    0 32px 80px -20px rgba(0, 0, 0, 0.90),
+    0 0 0 1px rgba(197, 180, 149, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: #0d0f13;
+  z-index: 1;
+}
+
+/* Subtle inner vignette overlay for depth */
+.hero__portrait-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, transparent 55%, rgba(11, 12, 14, 0.70) 100%),
+    linear-gradient(to right, rgba(11, 12, 14, 0.25) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero__portrait {
@@ -746,43 +774,51 @@ ul {
   display: block;
 }
 
+/* Gold accent line — left edge decoration */
 .hero__portrait-frame {
   position: absolute;
-  inset: -14px;
-  border: 1.5px solid rgba(197, 180, 149, 0.45);
-  border-radius: calc(var(--radius-xl) + 6px);
+  top: 32px;
+  left: -12px;
+  width: 3px;
+  height: calc(100% - 64px);
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(197, 180, 149, 0.6) 20%,
+      rgba(197, 180, 149, 0.9) 50%,
+      rgba(197, 180, 149, 0.6) 80%,
+      transparent 100%);
+  border-radius: var(--radius-full);
   pointer-events: none;
-  box-shadow: 0 0 18px rgba(197, 180, 149, 0.15);
+  z-index: 3;
 }
 
+/* Remove the outer frame ring entirely */
 .hero__portrait-frame-2 {
-  position: absolute;
-  inset: -28px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: calc(var(--radius-xl) + 14px);
-  pointer-events: none;
+  display: none;
 }
 
+/* Badge — bottom-right corner seal */
 .hero__portrait-badge {
   position: absolute;
-  bottom: -16px;
-  right: -16px;
-  background: linear-gradient(135deg, #1C2029 0%, #12151B 100%);
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, rgba(28, 32, 41, 0.95) 0%, rgba(18, 21, 27, 0.98) 100%);
   color: #F8FAFC;
-  border: 1px solid rgba(197, 180, 149, 0.5);
+  border: 1px solid rgba(197, 180, 149, 0.45);
   padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.75),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+    0 8px 32px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
   z-index: 10;
   text-align: center;
-  line-height: 1.35;
-  backdrop-filter: blur(12px);
+  line-height: 1.4;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .hero__scroll-hint {
@@ -1808,6 +1844,8 @@ ul {
   transition: all var(--transition-base);
   position: relative;
   height: 100%;
+  cursor: pointer;
+  text-align: left;
 }
 
 .endorsement-card:hover {
@@ -1937,6 +1975,10 @@ ul {
   text-decoration: none;
   transition: all var(--transition-base);
   height: 100%;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
 
 .contact__card:hover {
@@ -2105,6 +2147,10 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
 
 .footer__contact-item:hover {
@@ -2339,16 +2385,20 @@ ul {
   .hero__inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
-    padding-top: calc(var(--nav-height) + 2rem);
+    padding-top: calc(var(--nav-height) + 1rem);
   }
 
   .hero__image-col {
     order: -1;
-    padding: 0;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;
   }
 
-  .hero__portrait-wrap {
-    width: 240px;
+  .hero__portrait-stage {
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .hero__content {
