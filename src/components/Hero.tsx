@@ -94,7 +94,7 @@ export default function Hero() {
 
             {/* Layer 3: High-depth badge */}
             <div className="hero__portrait-badge">
-              Sri Lankan<br />Inventor
+              Sri Lankan Inventor
             </div>
           </div>
         </div>
