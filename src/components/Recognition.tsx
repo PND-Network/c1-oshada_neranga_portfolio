@@ -106,10 +106,11 @@ export default function Recognition() {
           <div className="recognition__media-grid">
             {/* 1. Sameera Mihiran Endorsement */}
             <ScrollReveal delay={1}>
-              <a
-                href="https://www.facebook.com/share/1NDGQyoD4n/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => window.open('https://www.facebook.com/share/1NDGQyoD4n/', '_blank', 'noopener,noreferrer')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') window.open('https://www.facebook.com/share/1NDGQyoD4n/', '_blank', 'noopener,noreferrer'); }}
                 className="endorsement-card"
               >
                 <div className="endorsement-card__top">
@@ -127,15 +128,16 @@ export default function Recognition() {
                   <span>View Endorsement Post</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
 
             {/* 2. Jiří Nevrlý Live Video Reel */}
             <ScrollReveal delay={2}>
-              <a
-                href="https://www.facebook.com/share/18xJ8TZitY/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => window.open('https://www.facebook.com/share/18xJ8TZitY/', '_blank', 'noopener,noreferrer')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') window.open('https://www.facebook.com/share/18xJ8TZitY/', '_blank', 'noopener,noreferrer'); }}
                 className="endorsement-card"
               >
                 <div className="endorsement-card__top">
@@ -153,15 +155,16 @@ export default function Recognition() {
                   <span>Watch Video Reel</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
 
             {/* 3. Official Innovation Showcase */}
             <ScrollReveal delay={3}>
-              <a
-                href="https://www.facebook.com/share/18qfAzi4DZ/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => window.open('https://www.facebook.com/share/18qfAzi4DZ/', '_blank', 'noopener,noreferrer')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') window.open('https://www.facebook.com/share/18qfAzi4DZ/', '_blank', 'noopener,noreferrer'); }}
                 className="endorsement-card"
               >
                 <div className="endorsement-card__top">
@@ -179,15 +182,16 @@ export default function Recognition() {
                   <span>View Project Update</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
 
             {/* 4. Public Media Story */}
             <ScrollReveal delay={4}>
-              <a
-                href="https://www.facebook.com/share/p/1JFFhuycWT/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => window.open('https://www.facebook.com/share/p/1JFFhuycWT/', '_blank', 'noopener,noreferrer')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') window.open('https://www.facebook.com/share/p/1JFFhuycWT/', '_blank', 'noopener,noreferrer'); }}
                 className="endorsement-card"
               >
                 <div className="endorsement-card__top">
@@ -205,15 +209,16 @@ export default function Recognition() {
                   <span>Read Media Story</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
 
             {/* 5. Google Search Verification */}
             <ScrollReveal delay={5}>
-              <a
-                href="https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => window.open('https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8', '_blank', 'noopener,noreferrer')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') window.open('https://www.google.com/search?q=G.H.D.oshada+neranga&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8', '_blank', 'noopener,noreferrer'); }}
                 className="endorsement-card endorsement-card--highlight"
               >
                 <div className="endorsement-card__top">
@@ -231,7 +236,7 @@ export default function Recognition() {
                   <span>Verify on Google Search</span>
                   <span aria-hidden="true">&rarr;</span>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -247,23 +252,29 @@ export default function Recognition() {
           <div className="pdf-modal__toolbar">
             <span className="pdf-modal__meta">Issued: 01 August 2026 · Southern Technology Incubation Centre (STIC)</span>
             <div className="pdf-modal__buttons">
-              <a
-                href="/Commendation%20Letter.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => window.open('/Commendation%20Letter.pdf', '_blank', 'noopener,noreferrer')}
                 className="btn btn-outline btn-sm"
               >
                 <ExternalLink size={13} />
                 Open in New Tab
-              </a>
-              <a
-                href="/Commendation%20Letter.pdf"
-                download="Commendation Letter - Oshada Neranga.pdf"
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/Commendation%20Letter.pdf';
+                  link.download = 'Commendation Letter - Oshada Neranga.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="btn btn-primary btn-sm"
               >
                 <Download size={13} />
                 Download PDF
-              </a>
+              </button>
             </div>
           </div>
           <div className="pdf-modal__frame-wrap">

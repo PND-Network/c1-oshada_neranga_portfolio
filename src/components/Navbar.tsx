@@ -73,28 +73,28 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? 'navbar--solid' : 'navbar--transparent'}`}>
         <div className="container navbar__inner">
-          <a
-            href="#home"
+          <button
+            type="button"
             className="navbar__brand"
-            onClick={(e) => { e.preventDefault(); handleLinkClick('#home'); }}
+            onClick={() => handleLinkClick('#home')}
             aria-label="G.H.D. Oshada Neranga — Home"
           >
             <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
               G.H.D. Oshada Neranga
             </span>
             <span className="navbar__title">Inventor</span>
-          </a>
+          </button>
 
           <ul className="navbar__links" role="list">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <button
+                  type="button"
                   className={`navbar__link ${isLight ? 'navbar__link--light' : ''} ${activeSection === link.href.replace('#', '') ? 'active' : ''}`}
-                  onClick={(e) => { e.preventDefault(); handleLinkClick(link.href); }}
+                  onClick={() => handleLinkClick(link.href)}
                 >
                   {link.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -116,14 +116,14 @@ export default function Navbar() {
 
       <div className={`navbar__mobile ${mobileOpen ? 'is-open' : ''}`} role="navigation" aria-label="Mobile navigation">
         {navLinks.map((link) => (
-          <a
+          <button
             key={link.href}
-            href={link.href}
+            type="button"
             className="navbar__mobile-link"
-            onClick={(e) => { e.preventDefault(); handleLinkClick(link.href); }}
+            onClick={() => handleLinkClick(link.href)}
           >
             {link.label}
-          </a>
+          </button>
         ))}
       </div>
     </>

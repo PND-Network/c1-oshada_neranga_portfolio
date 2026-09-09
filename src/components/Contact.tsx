@@ -19,7 +19,11 @@ export default function Contact() {
         <ScrollReveal delay={1}>
           <div className="contact__grid">
             {/* Phone */}
-            <a href="tel:+94764689418" className="contact__card">
+            <button
+              type="button"
+              onClick={() => { window.location.href = 'tel:+94764689418'; }}
+              className="contact__card"
+            >
               <div className="contact__info-icon" aria-hidden="true">
                 <Phone size={20} />
               </div>
@@ -27,10 +31,14 @@ export default function Contact() {
                 <div className="contact__info-label">Phone</div>
                 <div className="contact__info-value">+94 76 468 9418</div>
               </div>
-            </a>
+            </button>
 
             {/* Email */}
-            <a href="mailto:Oshadaneranga4@gmail.com" className="contact__card">
+            <button
+              type="button"
+              onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
+              className="contact__card"
+            >
               <div className="contact__info-icon" aria-hidden="true">
                 <Mail size={20} />
               </div>
@@ -38,13 +46,12 @@ export default function Contact() {
                 <div className="contact__info-label">Email</div>
                 <div className="contact__info-value">Oshadaneranga4@gmail.com</div>
               </div>
-            </a>
+            </button>
 
             {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/g-h-d-oshada-neranga-339389417?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => window.open('https://www.linkedin.com/in/g-h-d-oshada-neranga-339389417?utm_source=share_via&utm_content=profile&utm_medium=member_android', '_blank', 'noopener,noreferrer')}
               className="contact__card"
             >
               <div className="contact__info-icon" aria-hidden="true">
@@ -58,13 +65,12 @@ export default function Contact() {
                 <div className="contact__info-label">LinkedIn</div>
                 <div className="contact__info-value">G.H.D. Oshada Neranga</div>
               </div>
-            </a>
+            </button>
 
             {/* X (Twitter) */}
-            <a
-              href="https://x.com/OshadaNeranga"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => window.open('https://x.com/OshadaNeranga', '_blank', 'noopener,noreferrer')}
               className="contact__card"
             >
               <div className="contact__info-icon" aria-hidden="true">
@@ -76,13 +82,12 @@ export default function Contact() {
                 <div className="contact__info-label">X (Twitter)</div>
                 <div className="contact__info-value">@OshadaNeranga</div>
               </div>
-            </a>
+            </button>
 
             {/* Facebook */}
-            <a
-              href="https://www.facebook.com/profile.php?id=61590850472852"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => window.open('https://www.facebook.com/profile.php?id=61590850472852', '_blank', 'noopener,noreferrer')}
               className="contact__card"
             >
               <div className="contact__info-icon" aria-hidden="true">
@@ -94,7 +99,7 @@ export default function Contact() {
                 <div className="contact__info-label">Facebook</div>
                 <div className="contact__info-value">Oshada Neranga</div>
               </div>
-            </a>
+            </button>
           </div>
         </ScrollReveal>
       </div>

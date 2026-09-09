@@ -428,6 +428,7 @@ ul {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  text-align: left;
 }
 
 .navbar__name {
@@ -545,6 +546,8 @@ ul {
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--color-gray-100);
   transition: color var(--transition-fast);
+  text-align: left;
+  width: 100%;
 }
 
 .navbar__mobile-link:hover {
@@ -1841,6 +1844,8 @@ ul {
   transition: all var(--transition-base);
   position: relative;
   height: 100%;
+  cursor: pointer;
+  text-align: left;
 }
 
 .endorsement-card:hover {
@@ -1970,6 +1975,10 @@ ul {
   text-decoration: none;
   transition: all var(--transition-base);
   height: 100%;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
 
 .contact__card:hover {
@@ -2138,6 +2147,10 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
 
 .footer__contact-item:hover {
