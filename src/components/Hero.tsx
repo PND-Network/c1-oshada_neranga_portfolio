@@ -1,3 +1,4 @@
+import { useState, useRef, useCallback } from 'react';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
 import portrait from '../assets/images/portrait.jpg';
 
@@ -5,6 +6,38 @@ export default function Hero() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({
+    rotateX: 0,
+    rotateY: 0,
+    glareX: 50,
+    glareY: 50,
+    isHovered: false,
+  });
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({
+      rotateX: -y * 22,
+      rotateY: x * 22,
+      glareX: (x + 0.5) * 100,
+      glareY: (y + 0.5) * 100,
+      isHovered: true,
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setTilt((prev) => ({
+      ...prev,
+      rotateX: 0,
+      rotateY: 0,
+      isHovered: false,
+    }));
+  }, []);
 
   return (
     <section id="home" className="hero">
@@ -72,18 +105,50 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Portrait */}
-        <div className="hero__image-col" aria-hidden="true">
-          <div className="hero__portrait-wrap">
-            <div className="hero__portrait-frame" />
-            <div className="hero__portrait-frame-2" />
-            <img
-              src={portrait}
-              alt="G.H.D. Oshada Neranga — Inventor"
-              className="hero__portrait"
-              loading="eager"
-              fetchPriority="high"
-            />
+        {/* 3D Interactive Portrait */}
+        <div
+          className="hero__image-col"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div
+            ref={cardRef}
+            className={`hero__portrait-3d-stage ${!tilt.isHovered ? 'hero__portrait--idle-float' : ''}`}
+            style={{
+              transform: tilt.isHovered
+                ? `perspective(1200px) rotateX(${tilt.rotateX.toFixed(2)}deg) rotateY(${tilt.rotateY.toFixed(2)}deg)`
+                : undefined,
+            }}
+          >
+            {/* 3D Backlight Halo */}
+            <div className="hero__portrait-halo" aria-hidden="true" />
+
+            {/* Layer 0: Deep floating frame */}
+            <div className="hero__portrait-frame-2" aria-hidden="true" />
+
+            {/* Layer 1: Forward floating frame */}
+            <div className="hero__portrait-frame" aria-hidden="true" />
+
+            {/* Layer 2: Main 3D Card with Bevel & Specular Glare */}
+            <div className="hero__portrait-card">
+              <img
+                src={portrait}
+                alt="G.H.D. Oshada Neranga — Inventor"
+                className="hero__portrait"
+                loading="eager"
+                fetchPriority="high"
+              />
+              <div
+                className="hero__portrait-glare"
+                style={{
+                  opacity: tilt.isHovered ? 0.4 : 0,
+                  background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(197, 180, 149, 0.15) 35%, transparent 70%)`,
+                }}
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Layer 3: High-depth floating badge */}
             <div className="hero__portrait-badge">
               Sri Lankan<br />Inventor
             </div>
