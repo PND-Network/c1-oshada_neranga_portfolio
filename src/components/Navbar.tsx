@@ -8,8 +8,6 @@ const navLinks = [
   { label: 'Achievements', href: '#achievements' },
   { label: 'Patents', href: '#ip' },
   { label: 'Recognition', href: '#recognition' },
-  { label: 'Vision for Australia', href: '#vision' },
-  { label: 'Documents', href: '#documents' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -19,33 +17,53 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
 
-  useEffect(() => {
-    const sections = navLinks.map((l) => l.href.replace('#', ''));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { threshold: 0.3 }
-    );
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+      setScrolled(scrollY > 60);
+
+      // Edge case 1: Reached bottom of page -> activate contact
+      if (scrollY + windowHeight >= docHeight - 50) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // Edge case 2: Near top of page -> activate home
+      if (scrollY < 80) {
+        setActiveSection('home');
+        return;
+      }
+
+      // Scanline focal point 220px from top
+      const focalPoint = 220;
+      const sectionIds = navLinks.map((l) => l.href.replace('#', ''));
+      let current = 'home';
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= focalPoint) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLinkClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
+    const id = href.replace('#', '');
+    setActiveSection(id);
+    const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -62,7 +80,7 @@ export default function Navbar() {
             aria-label="G.H.D. Oshada Neranga — Home"
           >
             <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-              G.H.D. Oshada
+              G.H.D. Oshada Neranga
             </span>
             <span className="navbar__title">Inventor</span>
           </a>
