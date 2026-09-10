@@ -11,53 +11,38 @@ export interface YearGroup {
 
 export const achievementTimeline: YearGroup[] = [
   {
-    year: "2023",
+    year: "2026",
     items: [
       {
         award: "Certificate",
-        name: "Eco-Friendly Porcelain Brick",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
+        name: "Computer Literacy Certificate Programme",
+        description: "The Open University of Sri Lanka",
+      },
+    ],
+  },
+  {
+    year: "2025",
+    items: [
+      {
+        award: "Certificate",
+        name: "Pre-Warning Flood Detection and Alert System",
+        description: "Entrepreneurship Skills Exhibition and Competition - Provincial Level. Selected for further modifications.",
       },
       {
         award: "Certificate",
-        name: "Luminous Torch",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
-      },
-      {
-        award: "Certificate",
-        name: "Thread Seal Cutting Machine",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level.",
-      },
-      {
-        award: "Certificate",
-        name: "Night Visible Number Plate",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for further modifications.",
-      },
-      {
-        award: "Certificate",
-        name: "Wide-Angle Rotation Camera",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level.",
-      },
-      {
-        award: "Certificate",
-        name: "Grass Cutter Between Interlock",
-        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
-      },
-      {
-        award: "Gold Award — 1st Place",
-        name: "Porcelain Instead of Sand and Shingle",
-        description: "Ruhuna Invention & Innovation Exhibition - Provincial Level. Selected for national level.",
-      },
-      {
-        award: "Bronze Award — 3rd Place",
-        name: "Grass Cutter Between Interlock",
-        description: "Ruhuna Invention & Innovation Exhibition - Provincial Level. Selected for national level.",
+        name: "Recycled Porcelain Brick",
+        description: "Entrepreneurship Skills Exhibition and Competition - Provincial Level. Selected for further modifications.",
       },
     ],
   },
   {
     year: "2024",
     items: [
+      {
+        award: "Academic Achievement",
+        name: "Passed O/L Examination",
+        description: "G.C.E. Ordinary Level Examination",
+      },
       {
         award: "Certificate",
         name: "Recycled Porcelain Brick",
@@ -116,17 +101,62 @@ export const achievementTimeline: YearGroup[] = [
     ],
   },
   {
-    year: "2025",
+    year: "2023",
     items: [
       {
-        award: "Certificate",
-        name: "Pre-Warning Flood Detection and Alert System",
-        description: "Entrepreneurship Skills Exhibition and Competition - Provincial Level. Selected for further modifications.",
+        award: "School Leadership",
+        name: "G/Udugama National College Prefect",
+        description: "Served as a school prefect at G/Udugama National College.",
       },
       {
         award: "Certificate",
-        name: "Recycled Porcelain Brick",
-        description: "Entrepreneurship Skills Exhibition and Competition - Provincial Level. Selected for further modifications.",
+        name: "Eco-Friendly Porcelain Brick",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
+      },
+      {
+        award: "Certificate",
+        name: "Luminous Torch",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
+      },
+      {
+        award: "Certificate",
+        name: "Thread Seal Cutting Machine",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level.",
+      },
+      {
+        award: "Certificate",
+        name: "Night Visible Number Plate",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for further modifications.",
+      },
+      {
+        award: "Certificate",
+        name: "Wide-Angle Rotation Camera",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level.",
+      },
+      {
+        award: "Certificate",
+        name: "Grass Cutter Between Interlock",
+        description: "Ruhuna Invention & Innovation Competition - Provincial Level. Selected for national level.",
+      },
+      {
+        award: "Gold Award — 1st Place",
+        name: "Porcelain Instead of Sand and Shingle",
+        description: "Ruhuna Invention & Innovation Exhibition - Provincial Level. Selected for national level.",
+      },
+      {
+        award: "Bronze Award — 3rd Place",
+        name: "Grass Cutter Between Interlock",
+        description: "Ruhuna Invention & Innovation Exhibition - Provincial Level. Selected for national level.",
+      },
+    ],
+  },
+  {
+    year: "2022",
+    items: [
+      {
+        award: "School Leadership",
+        name: "G/Udugama National College Prefect",
+        description: "Served as a school prefect at G/Udugama National College.",
       },
     ],
   },
