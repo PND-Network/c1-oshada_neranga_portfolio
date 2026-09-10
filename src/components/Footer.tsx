@@ -17,11 +17,12 @@ export default function Footer() {
     { label: 'Achievements', id: 'achievements' },
     { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Media & Endorsements', id: 'media' },
+    { label: 'Contact', id: 'footer' },
   ];
 
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="container">
         <div className="footer__top">
           {/* Brand */}
@@ -67,7 +68,7 @@ export default function Footer() {
               </button>
               <button
                 type="button"
-                onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
+                onClick={() => { window.location.href = 'mailto:oshadaneranga4@gmail.com'; }}
                 className="footer__social-btn"
                 aria-label="Email"
               >
@@ -108,7 +109,7 @@ export default function Footer() {
             <div className="footer__contact-list">
               <button
                 type="button"
-                onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
+                onClick={() => { window.location.href = 'mailto:oshadaneranga4@gmail.com'; }}
                 className="footer__contact-item"
               >
                 <div className="footer__contact-icon">
@@ -116,7 +117,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <span className="footer__contact-label">Email</span>
-                  <span className="footer__contact-value">Oshadaneranga4@gmail.com</span>
+                  <span className="footer__contact-value">oshadaneranga4@gmail.com</span>
                 </div>
               </button>
               <button

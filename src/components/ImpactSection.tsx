@@ -21,7 +21,7 @@ const impacts = [
   {
     icon: <Wrench size={22} />,
     title: 'Engineering Innovation',
-    desc: 'Designing practical devices — including specialised tools for interlocking pavement maintenance — that address real-world engineering and maintenance challenges.',
+    desc: 'Designing practical devices — including specialised tools for interlocking pavement maintenance — that address real world engineering and maintenance challenges.',
   },
   {
     icon: <TrendingUp size={22} />,
@@ -59,7 +59,7 @@ export default function ImpactSection() {
               Five Dimensions of Impact
             </h2>
             <p className="section-subtitle text-center" style={{ margin: '0 auto' }}>
-              Each invention addresses a documented real-world problem, contributing across five interconnected impact categories.
+              Each invention addresses a documented real world problem, contributing across five interconnected impact categories.
             </p>
           </ScrollReveal>
 

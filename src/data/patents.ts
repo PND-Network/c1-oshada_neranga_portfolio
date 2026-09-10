@@ -16,7 +16,7 @@ export const patents: Patent[] = [
     reference: "LK/P/1/23235",
     date: "22/05/2024",
     status: "Patent Application Filed",
-    title: "Bulb-Changing Device for Permanently Mounted or Wire-End Bulbs",
+    title: "A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire.",
     notes: "First patent application filed with Sri Lanka Inventors Commission / IP authority.",
   },
   {
