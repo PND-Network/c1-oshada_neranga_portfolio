@@ -2054,37 +2054,8 @@ ul {
    ============================================================ */
 .media-section {
   position: relative;
-  background-color: #07090E;
+  background-color: var(--color-gray-200);
   overflow: hidden;
-  z-index: 0;
-}
-
-.media-section__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/assets/inventor%20background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.media-section__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(7, 9, 14, 0.65) 0%,
-    rgba(10, 13, 19, 0.42) 35%,
-    rgba(13, 17, 26, 0.50) 70%,
-    rgba(7, 9, 14, 0.72) 100%
-  );
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  z-index: 1;
-  pointer-events: none;
 }
 
 .media-section__content {
