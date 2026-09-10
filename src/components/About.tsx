@@ -13,21 +13,19 @@ const domains = [
 export default function About() {
   return (
     <section id="about" className="about section-py">
-
-
       <div className="container about__container">
         <div className="about__content-grid">
           {/* Left Side — New Invention Image */}
           <div className="about__image-side">
             <ScrollReveal>
               <figure className="about__image-wrapper">
-                <img 
-                  src="/assets/bulb-changer-colored.jpg" 
-                  alt="Bulb-Changing Device for Permanently Mounted or Wire-End Bulbs" 
-                  className="about__invention-img" 
+                <img
+                  src="/assets/bulb-changer-colored.png"
+                  alt="A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire."
+                  className="about__invention-img"
                 />
                 <figcaption className="about__image-caption">
-                  Bulb-Changing Device for Permanently Mounted or Wire-End Bulbs
+                  A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire.
                 </figcaption>
               </figure>
             </ScrollReveal>
