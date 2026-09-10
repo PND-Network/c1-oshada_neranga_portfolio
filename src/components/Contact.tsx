@@ -36,7 +36,7 @@ export default function Contact() {
             {/* Email */}
             <button
               type="button"
-              onClick={() => { window.location.href = 'mailto:Oshadaneranga4@gmail.com'; }}
+              onClick={() => { window.location.href = 'mailto:oshadaneranga4@gmail.com'; }}
               className="contact__card"
             >
               <div className="contact__info-icon" aria-hidden="true">
@@ -44,7 +44,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact__info-label">Email</div>
-                <div className="contact__info-value">Oshadaneranga4@gmail.com</div>
+                <div className="contact__info-value">oshadaneranga4@gmail.com</div>
               </div>
             </button>
 
