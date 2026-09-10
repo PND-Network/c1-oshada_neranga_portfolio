@@ -27,7 +27,7 @@ export default function Hero() {
           </p>
 
           <blockquote className="hero__statement">
-            "Developing practical technologies that transform real-world challenges into sustainable, scalable innovations."
+            "Developing practical technologies that transform real world challenges into sustainable, scalable innovations."
           </blockquote>
 
           <div className="hero__cta-grid">

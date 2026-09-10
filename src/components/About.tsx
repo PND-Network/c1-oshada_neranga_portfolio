@@ -36,12 +36,12 @@ export default function About() {
             <ScrollReveal>
               <span className="section-label">Professional Profile</span>
               <div className="gold-line" />
-              <h2 className="section-title">An Inventor Driven by<br />Real-World Impact</h2>
+              <h2 className="section-title">An Inventor Driven by<br />Real World Impact</h2>
             </ScrollReveal>
 
             <ScrollReveal delay={1}>
               <p className="about__bio">
-                G.H.D. Oshada Neranga is an emerging inventor focused on solving practical engineering problems through original thinking. His innovation journey began during his school years at G/Udugama National College, leading to a systematic approach to invention and real-world problem solving.
+                G.H.D. Oshada Neranga is an emerging inventor focused on solving practical engineering problems through original thinking. His innovation journey began during his school years at G/Udugama National College, leading to a systematic approach to invention and real world problem solving.
               </p>
               <p className="about__bio">
                 His work spans applied domains from sustainable construction and waste valorisation to public safety, surveillance, and disaster preparedness. He has presented multiple original inventions at national-level platforms, including the Ruhuna Invention &amp; Innovation Exhibition (RIIE).
