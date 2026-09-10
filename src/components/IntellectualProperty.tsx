@@ -13,7 +13,9 @@ const countryData: Record<string, { svg: string; code: string }> = {
 export default function IntellectualProperty() {
   return (
     <section id="ip" className="ip-section section-py">
-      <div className="container">
+      <div className="ip-section__bg" aria-hidden="true" />
+      <div className="ip-section__overlay" aria-hidden="true" />
+      <div className="container ip-section__content">
         <ScrollReveal>
           <div className="ip-intro">
             <span className="section-label">Patents</span>
@@ -44,13 +46,10 @@ export default function IntellectualProperty() {
                     <span className="ip-card__country-code">{country?.code || patent.flag}</span>
                   </div>
                   <div className="ip-card__jurisdiction">{patent.jurisdiction}</div>
-                  <div className="ip-card__status">
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-gold)', display: 'inline-block', flexShrink: 0 }} aria-hidden="true" />
-                    {patent.status}
-                  </div>
                   <div className="ip-card__ref">Ref: {patent.reference}</div>
                   <div className="ip-card__date">Filed: {patent.date}</div>
                   <h3 className="ip-card__title">{patent.title}</h3>
+                  <div className="ip-card__status">{patent.status}</div>
                   {patent.notes && (
                     <p className="ip-card__notes">
                       {patent.notes}
