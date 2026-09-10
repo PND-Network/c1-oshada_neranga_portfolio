@@ -6,7 +6,7 @@ import Inventions from './components/Inventions';
 import Achievements from './components/Achievements';
 import IntellectualProperty from './components/IntellectualProperty';
 import Recognition from './components/Recognition';
-import Contact from './components/Contact';
+import MediaEndorsements from './components/MediaEndorsements';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Achievements />
         <IntellectualProperty />
         <Recognition />
-        <Contact />
+        <MediaEndorsements />
       </main>
       <Footer />
     </>
