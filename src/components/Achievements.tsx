@@ -4,6 +4,7 @@ import image8MedalsAwards from '../assets/images/image8_medals_awards.jpg';
 import image3PrizeGivingCeremony from '../assets/images/image_3.jpg';
 import image4RuhunaCompetition from '../assets/images/image_4.jpg';
 import image7RiieCertificates from '../assets/images/image_7.jpg';
+import image9CertificatesAwards from '../assets/images/image_9.jpg';
 
 export default function Achievements() {
   return (
@@ -16,7 +17,7 @@ export default function Achievements() {
             A Record of<br />National Recognition
           </h2>
           <p className="section-subtitle">
-            A documented timeline of invention competitions, awards and recognition from 2023 to 2025, supported by certificates, official correspondence and photographic evidence.
+            A documented timeline of invention competitions, awards and recognition from 2022 to 2026, supported by certificates, official correspondence and photographic evidence.
           </p>
         </ScrollReveal>
 
@@ -40,13 +41,13 @@ export default function Achievements() {
             <div style={{
               position: 'absolute', top: 0, left: 0, bottom: 20,
               width: 48, zIndex: 2, pointerEvents: 'none',
-              background: 'linear-gradient(to right, var(--color-offwhite, #f8f7f4), transparent)',
+              background: 'linear-gradient(to right, #ffffff, transparent)',
               borderRadius: 'var(--radius-lg) 0 0 var(--radius-lg)',
             }} />
             <div style={{
               position: 'absolute', top: 0, right: 0, bottom: 20,
               width: 48, zIndex: 2, pointerEvents: 'none',
-              background: 'linear-gradient(to left, var(--color-offwhite, #f8f7f4), transparent)',
+              background: 'linear-gradient(to left, #ffffff, transparent)',
               borderRadius: '0 var(--radius-lg) var(--radius-lg) 0',
             }} />
 
@@ -258,6 +259,54 @@ export default function Achievements() {
                 </div>
               </div>
 
+              {/* Card 5 — Certificates and Awards for Inventions */}
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '0 0 300px',
+                  height: '380px',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.30)',
+                  scrollSnapAlign: 'start',
+                  cursor: 'pointer',
+                  transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+                  background: '#f8f8f8',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 56px rgba(0,0,0,0.42)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.30)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <img
+                  src={image9CertificatesAwards}
+                  alt="Certificates and awards for inventions - G.H.D. Oshada Neranga"
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'cover', objectPosition: 'center',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  loading="lazy"
+                />
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(to top, rgba(5,10,30,0.97) 0%, rgba(5,10,30,0.6) 50%, transparent 100%)',
+                  padding: '48px 16px 16px',
+                }}>
+                  <div style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>🎖️ Certificates &amp; Awards</div>
+                  <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                    Certificates and Awards for Inventions
+                  </p>
+                </div>
+              </div>
+
             </div>
 
             {/* Scroll hint label */}
@@ -280,7 +329,7 @@ export default function Achievements() {
         </ScrollReveal>
 
         {/* Timeline */}
-        <div className="timeline" aria-label="Achievement timeline 2023-2025">
+        <div className="timeline" aria-label="Achievement timeline 2022-2026">
           {achievementTimeline.map((group) => (
             <div key={group.year} className="timeline__year-group">
               <ScrollReveal>
