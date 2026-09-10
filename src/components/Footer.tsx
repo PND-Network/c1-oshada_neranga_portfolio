@@ -17,11 +17,12 @@ export default function Footer() {
     { label: 'Achievements', id: 'achievements' },
     { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Media & Endorsements', id: 'media' },
+    { label: 'Contact', id: 'footer' },
   ];
 
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="container">
         <div className="footer__top">
           {/* Brand */}
