@@ -33,18 +33,6 @@ export const inventions: Invention[] = [
 
   {
     id: 2,
-    category: "Electrical Safety",
-    title: "Bulb-Changing Device for Permanently Mounted or Wire-End Bulbs",
-    problem: "Replacing light bulbs that are permanently mounted or directly attached to the end of a wire is hazardous and often requires disconnecting live wiring, posing a significant electrical safety risk during routine maintenance.",
-    concept: "A specialised hand-held device that enables safe removal and replacement of permanently mounted or wire-end light bulbs using an integrated connected holder mechanism, eliminating the need to handle live wiring or dismount fixed fittings.",
-    value: "Improves electrical safety and maintenance convenience by enabling bulb replacement without direct contact with live wiring, reducing the risk of electrical accidents and simplifying routine lighting maintenance in domestic and commercial settings.",
-    awards: [],
-    ipStatus: "Patent Application Filed: Sri Lanka (Patent No: LK/P/1/23235)",
-    hasEvidence: true,
-  },
-
-  {
-    id: 3,
     category: "Sustainable Construction",
     title: "Water-Storing Building Block with Internal Reservoirs",
     problem: "Conventional building blocks serve a purely structural purpose and contribute nothing to on-site water storage or resource management, leaving buildings unprepared for water shortages or emergencies.",
@@ -58,7 +46,7 @@ export const inventions: Invention[] = [
   /* ── GOLD AWARDS ────────────────────────────────────────────────────── */
 
   {
-    id: 4,
+    id: 3,
     category: "Sustainable Construction",
     title: "Recycled Porcelain Brick",
     problem: "Industrial porcelain waste is generated in large quantities during manufacturing and is difficult to repurpose through conventional means, creating an ongoing environmental and waste-management burden.",
@@ -74,7 +62,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 5,
+    id: 4,
     category: "Sustainable Construction",
     title: "Porcelain as a Replacement for Sand and Shingle",
     problem: "Natural sand and shingle used in construction are being depleted through excessive extraction, driving environmental degradation of riverbeds and coastlines and increasing material costs.",
@@ -89,7 +77,7 @@ export const inventions: Invention[] = [
   /* ── BRONZE / NATIONAL-LEVEL AWARDS ────────────────────────────────── */
 
   {
-    id: 6,
+    id: 5,
     category: "Engineering Innovation",
     title: "Grass Cutter Between Interlocking Pavement Blocks",
     problem: "Grass and weeds growing through the narrow gaps of interlocking paving blocks are extremely difficult to remove using conventional mowers or hand tools without damaging or displacing the surface.",
@@ -105,7 +93,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 7,
+    id: 6,
     category: "Disaster Preparedness",
     title: "Emergency Water Storage Tap",
     problem: "During natural disasters and emergencies, conventional water supply infrastructure is frequently disrupted, leaving communities without access to safe water for essential needs including drinking, sanitation, and first aid.",
@@ -123,7 +111,7 @@ export const inventions: Invention[] = [
   /* ── CERTIFICATE OF EXCELLENCE ──────────────────────────────────────── */
 
   {
-    id: 8,
+    id: 7,
     category: "Road Safety",
     title: "Night Visible Number Plate",
     problem: "Poor visibility of vehicle number plates at night contributes significantly to road safety challenges, hindering law enforcement identification and accident investigation in low-light conditions.",
@@ -137,7 +125,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 9,
+    id: 8,
     category: "Surveillance & Monitoring",
     title: "Wide-Angle Rotating Camera System",
     problem: "Fixed-position security cameras have an inherently limited field of view, creating blind spots in surveillance coverage that can be exploited or leave areas unmonitored.",
@@ -151,7 +139,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 10,
+    id: 9,
     category: "Disaster Management",
     title: "Pre-Warning Flood Detection and Alert System",
     problem: "Communities in flood-prone areas often receive insufficient advance warning before flood events, critically limiting evacuation time and the effectiveness of emergency disaster response.",
@@ -165,7 +153,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 11,
+    id: 10,
     category: "Safety & Emergency",
     title: "Luminous Torch",
     problem: "In dark environments - particularly during power outages and emergencies - conventional torches are extremely difficult to locate quickly, defeating their purpose precisely when they are most needed.",
@@ -180,7 +168,7 @@ export const inventions: Invention[] = [
   /* ── CERTIFICATE OF PARTICIPATION ──────────────────────────────────── */
 
   {
-    id: 12,
+    id: 11,
     category: "Engineering Innovation",
     title: "High Voltage Sparker",
     problem: "Generating reliable, controlled high-voltage sparks for ignition and electrical testing applications typically requires specialised, expensive equipment that is not readily accessible for practical or field-based use.",
@@ -193,7 +181,7 @@ export const inventions: Invention[] = [
   },
 
   {
-    id: 13,
+    id: 12,
     category: "Engineering Innovation",
     title: "Thread Seal Cutting Machine",
     problem: "Cutting PTFE thread seal tape (plumber's tape) precisely and cleanly during pipe-fitting and plumbing operations is time-consuming when done by hand, producing inconsistent lengths and wasted material.",
@@ -202,6 +190,18 @@ export const inventions: Invention[] = [
     awards: [
       "Ruhuna Invention & Innovation Competition: Certificate of Participation",
     ],
+    hasEvidence: true,
+  },
+
+  {
+    id: 13,
+    category: "Electrical Safety",
+    title: "A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire.",
+    problem: "Replacing light bulbs that are permanently mounted or directly attached to the end of a wire is hazardous and often requires disconnecting live wiring, posing a significant electrical safety risk during routine maintenance.",
+    concept: "A specialised hand-held device that enables safe removal and replacement of permanently mounted or wire-end light bulbs using an integrated connected holder mechanism, eliminating the need to handle live wiring or dismount fixed fittings.",
+    value: "Improves electrical safety and maintenance convenience by enabling bulb replacement without direct contact with live wiring, reducing the risk of electrical accidents and simplifying routine lighting maintenance in domestic and commercial settings.",
+    awards: [],
+    ipStatus: "Patent Application Filed: Sri Lanka (Patent No: LK/P/1/23235)",
     hasEvidence: true,
   },
 ];
