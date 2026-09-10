@@ -1,15 +1,5 @@
 import ScrollReveal from './ScrollReveal';
 
-const domains = [
-  'Sustainable Technology',
-  'Public Safety',
-  'Disaster Preparedness',
-  'Waste Valorisation',
-  'Construction Technology',
-  'Surveillance Systems',
-  'Technology Commercialisation',
-];
-
 export default function About() {
   return (
     <section id="about" className="about section-py">
@@ -51,14 +41,6 @@ export default function About() {
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={2}>
-              <h3 className="about__domains-heading">Core Invention Domains</h3>
-              <div className="about__domains">
-                {domains.map((d) => (
-                  <span key={d} className="about__domain-tag">{d}</span>
-                ))}
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </div>

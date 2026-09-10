@@ -8,30 +8,19 @@ import image9CertificatesAwards from '../assets/images/image_9.jpg';
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="achievements section-py">
+    <section id="achievements" className="achievements section-py" style={{ backgroundColor: 'var(--color-navy)', color: 'var(--color-white)' }}>
       <div className="container">
         <ScrollReveal>
           <span className="section-label">Awards &amp; Recognition</span>
           <div className="gold-line" />
-          <h2 className="section-title">
+          <h2 className="section-title section-title--light">
             A Record of<br />National Recognition
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle section-subtitle--light">
             A documented timeline of invention competitions, awards and recognition from 2022 to 2026, supported by certificates, official correspondence and photographic evidence.
           </p>
         </ScrollReveal>
 
-        {/* Stats bar */}
-        <ScrollReveal delay={1}>
-          <div className="achievements__stats">
-            {statsData.map((stat, i) => (
-              <div key={i} className="achievements__stat">
-                <div className="achievements__stat-value">{stat.value}</div>
-                <div className="achievements__stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
 
         {/* Photographic evidence gallery - horizontal scroll strip */}
         <ScrollReveal>
