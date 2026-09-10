@@ -8,6 +8,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
+      <div className="hero__bg-wallpaper" aria-hidden="true" />
+      <div className="hero__bg-overlay" aria-hidden="true" />
       <div className="hero__bg-pattern" aria-hidden="true" />
       <div className="hero__bg-radial" aria-hidden="true" />
 
@@ -28,7 +30,7 @@ export default function Hero() {
             "Developing practical technologies that transform real-world challenges into sustainable, scalable innovations."
           </blockquote>
 
-          <div className="hero__actions">
+          <div className="hero__cta-grid">
             <button
               id="hero-explore-btn"
               className="btn btn-gold btn-lg"
@@ -43,9 +45,7 @@ export default function Hero() {
             >
               View Achievements
             </button>
-          </div>
 
-          <div className="hero__meta-links">
             <button
               type="button"
               onClick={() => {
