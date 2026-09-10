@@ -8,7 +8,8 @@ const navLinks = [
   { label: 'Achievements', href: '#achievements' },
   { label: 'Patents', href: '#ip' },
   { label: 'Recognition', href: '#recognition' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Media & Endorsements', href: '#media' },
+  { label: 'Contact', href: '#footer' },
 ];
 
 export default function Navbar() {
@@ -17,6 +18,14 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    // If arriving with #contact, smoothly scroll to footer
+    if (window.location.hash === '#contact' || window.location.hash === '#footer') {
+      const footerEl = document.getElementById('footer');
+      if (footerEl) {
+        setTimeout(() => footerEl.scrollIntoView({ behavior: 'smooth' }), 150);
+      }
+    }
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -24,9 +33,9 @@ export default function Navbar() {
 
       setScrolled(scrollY > 60);
 
-      // Edge case 1: Reached bottom of page -> activate contact
+      // Edge case 1: Reached bottom of page -> activate contact (points to footer)
       if (scrollY + windowHeight >= docHeight - 50) {
-        setActiveSection('contact');
+        setActiveSection('footer');
         return;
       }
 
@@ -63,7 +72,7 @@ export default function Navbar() {
     setMobileOpen(false);
     const id = href.replace('#', '');
     setActiveSection(id);
-    const el = document.getElementById(id);
+    const el = document.getElementById(id) || (id === 'contact' ? document.getElementById('footer') : null);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
