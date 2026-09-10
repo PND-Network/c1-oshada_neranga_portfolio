@@ -1013,8 +1013,8 @@ ul {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 300px;
-  max-height: 440px;
+  max-width: 360px;
+  max-height: 520px;
   object-fit: contain;
   height: auto;
   border-radius: var(--radius-lg);
@@ -2831,5 +2831,288 @@ ul {
 
   .stats-row__item {
     flex: 0 0 calc(50% - var(--space-3));
+  }
+}
+
+/* ============================================================
+   SITE-WIDE ANIMATION ENHANCEMENTS
+   ============================================================ */
+
+/* ── Shared keyframes ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197, 180, 149, 0); }
+  50%       { box-shadow: 0 0 0 8px rgba(197, 180, 149, 0.18); }
+}
+
+@keyframes borderGrow {
+  from { width: 0; }
+  to   { width: 48px; }
+}
+
+@keyframes countGlow {
+  from { text-shadow: none; }
+  to   { text-shadow: 0 0 20px rgba(197, 180, 149, 0.4); }
+}
+
+@keyframes iconSpin {
+  0%   { transform: rotate(0deg) scale(1); }
+  40%  { transform: rotate(12deg) scale(1.08); }
+  70%  { transform: rotate(-8deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06); }
+  50%       { box-shadow: 0 8px 32px rgba(0,0,0,0.65), 0 0 0 3px rgba(197, 180, 149, 0.35); }
+}
+
+@keyframes cardTopReveal {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes recognitionBorderPulse {
+  0%, 100% { border-left-color: rgba(197, 180, 149, 0.30); }
+  50%       { border-left-color: rgba(197, 180, 149, 0.70); }
+}
+
+@keyframes footerFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmerSweep {
+  0%   { left: -100%; }
+  100% { left: 150%; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ── Section label: slide + fade in ── */
+.section-label {
+  animation: fadeInUp 0.55s ease both;
+}
+
+/* ── Gold line: grow from left ── */
+.gold-line {
+  animation: borderGrow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ── Hero name: entrance scale-in ── */
+.hero__name {
+  animation: fadeInUp 0.7s 0.1s ease both;
+}
+
+/* ── Hero profession / statement: staggered entrance ── */
+.hero__profession {
+  animation: fadeInUp 0.7s 0.25s ease both;
+}
+
+.hero__statement {
+  animation: fadeInUp 0.7s 0.4s ease both;
+}
+
+.hero__cta-grid {
+  animation: fadeInUp 0.7s 0.55s ease both;
+}
+
+/* ── Hero badge: subtle pulsing glow ── */
+.hero__portrait-badge {
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+/* ── Btn-gold: shimmer sweep effect ── */
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  pointer-events: none;
+  transition: none;
+}
+
+.btn-gold:hover::after {
+  animation: shimmerSweep 0.55s ease forwards;
+}
+
+/* ── Btn-primary: subtle lift with growing shadow ── */
+.btn-primary {
+  transition: all var(--transition-base);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(11, 12, 14, 0.22);
+}
+
+/* ── Stats row: staggered children entrance ── */
+.stats-row__item {
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.stats-row__number {
+  transition: text-shadow var(--transition-slow);
+}
+
+.stats-row__item:hover .stats-row__number {
+  text-shadow: 0 0 24px rgba(197, 180, 149, 0.45);
+  transform: scale(1.04);
+}
+
+.stats-row__item:hover {
+  transform: translateY(-3px);
+}
+
+/* ── Impact cards: icon pulse on hover ── */
+.impact__icon {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.impact__card:hover .impact__icon {
+  animation: iconSpin 0.5s ease forwards;
+  box-shadow: 0 4px 16px rgba(11, 12, 14, 0.25);
+}
+
+/* ── Invention cards: top gold bar reveal on hover ── */
+.invention-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.invention-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Recognition letter: animated left border ── */
+.recognition__letter {
+  animation: recognitionBorderPulse 3s ease-in-out infinite;
+}
+
+/* ── Recognition images: subtle scale on hover ── */
+.recognition__img-card {
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.recognition__img-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(11, 12, 14, 0.14);
+}
+
+.recognition__img-card img {
+  transition: transform var(--transition-slow);
+}
+
+.recognition__img-card:hover img {
+  transform: scale(1.03);
+}
+
+/* ── Endorsement card: shimmer highlight on hover ── */
+.endorsement-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.endorsement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(197,180,149,0.06), transparent);
+  pointer-events: none;
+  transition: none;
+}
+
+.endorsement-card:hover::before {
+  animation: shimmerSweep 0.7s ease forwards;
+}
+
+/* ── Footer social: ripple ── */
+.footer__social-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__social-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(197, 180, 149, 0.18);
+  transform: scale(0);
+  transition: transform var(--transition-base);
+  pointer-events: none;
+}
+
+.footer__social-btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* ── Footer back-to-top: arrow bounce ── */
+.footer__back-to-top:hover svg,
+.footer__back-to-top:hover [data-lucide] {
+  animation: about-img-float 0.6s ease-in-out 2;
+}
+
+/* ── Navbar link: faster, smoother underline ── */
+.navbar__link::after {
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Gold line pulse on section-label hover ── */
+.section-label:hover ~ .gold-line,
+.section-label:focus ~ .gold-line {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-lt));
+  background-size: 200% auto;
+  animation: goldShimmer 1.5s linear infinite;
+}
+
+/* ── Patent / recognition image cards: scale entrance ── */
+.patent-card {
+  animation: scaleIn 0.5s ease both;
+}
+
+/* ── Respect reduced-motion preferences ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
