@@ -6,8 +6,8 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Inventions', href: '#inventions' },
   { label: 'Achievements', href: '#achievements' },
-  { label: 'Patents', href: '#ip' },
   { label: 'Recognition', href: '#recognition' },
+  { label: 'Patents', href: '#ip' },
   { label: 'Media & Endorsements', href: '#media' },
   { label: 'Contact', href: '#footer' },
 ];

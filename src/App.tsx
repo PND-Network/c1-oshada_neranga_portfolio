@@ -18,8 +18,8 @@ function App() {
         <About />
         <Inventions />
         <Achievements />
-        <IntellectualProperty />
         <Recognition />
+        <IntellectualProperty />
         <MediaEndorsements />
       </main>
       <Footer />
