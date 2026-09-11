@@ -10,7 +10,7 @@ export default function About() {
             <ScrollReveal>
               <figure className="about__image-wrapper">
                 <img
-                  src="/assets/bulb-changer-colored.png"
+                  src="/assets/bulb-changer-colored.jpg"
                   alt="A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire."
                   className="about__invention-img"
                 />
