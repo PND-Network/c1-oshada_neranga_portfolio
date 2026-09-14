@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { ArrowUp, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const [showPhone, setShowPhone] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
