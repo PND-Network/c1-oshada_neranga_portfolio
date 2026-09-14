@@ -2821,28 +2821,37 @@ ul {
     --section-py: 4rem;
   }
 
+  /* ---- HERO mobile: text first, portrait below ---- */
   .hero__inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
-    padding-top: calc(var(--nav-height) + 1rem);
+    padding-top: calc(var(--nav-height) + 2rem);
+    min-height: auto;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: var(--space-16);
+  }
+
+  .hero__content {
+    order: 1;
+    padding: 0;
+    text-align: center;
   }
 
   .hero__image-col {
-    order: -1;
+    order: 2;
     min-height: auto;
     padding-top: 0;
     padding-bottom: 0;
     justify-content: center;
+    margin-top: 0;
   }
 
   .hero__portrait-stage {
-    max-width: 300px;
+    max-width: 280px;
     margin: 0 auto;
-  }
-
-  .hero__content {
-    padding: 0 0 var(--space-16);
-    text-align: center;
   }
 
   .hero__eyebrow {
@@ -2854,28 +2863,53 @@ ul {
     margin-right: auto;
   }
 
-  .hero__actions,
   .hero__cta-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: var(--space-4);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero__cta-grid .btn {
+    width: 100%;
     justify-content: center;
   }
 
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  /* ---- ABOUT mobile: text first, image below ---- */
   .about__content-grid {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: var(--space-8);
+  }
+
+  .about__content-side {
+    order: 1;
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .about__image-side {
+    order: 2;
   }
 
   .about__spacer {
     display: none;
   }
 
-  .about__content-side {
-    padding: var(--space-8) var(--space-5);
-  }
-
   .about__wallpaper-svg {
     opacity: 0.55;
   }
 
+  /* ---- STATS ROW mobile ---- */
   .stats-row__grid {
     flex-wrap: wrap;
     gap: var(--space-8);
@@ -2885,37 +2919,92 @@ ul {
     flex: 0 0 calc(50% - var(--space-4));
   }
 
+  /* ---- IMPACT mobile ---- */
   .impact__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* ---- RECOGNITION mobile ---- */
   .recognition__grid {
     grid-template-columns: 1fr;
   }
 
+  .recognition__images {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .recognition__img-card {
+    flex: 1 1 calc(50% - var(--space-2));
+    min-width: 200px;
+  }
+
+  .recognition__letter {
+    padding: var(--space-6) var(--space-6);
+  }
+
+  /* ---- ENDORSEMENTS mobile ---- */
   .endorsements-grid {
     grid-template-columns: 1fr;
   }
 
+  .endorsement-card {
+    min-height: auto;
+  }
+
+  /* ---- CONTACT mobile ---- */
   .contact__grid {
     grid-template-columns: 1fr;
   }
 
+  /* ---- FOOTER mobile ---- */
   .footer__top {
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 
+  /* ---- TIMELINE mobile ---- */
   .timeline__items {
     grid-template-columns: 1fr 1fr;
   }
 
+  /* ---- PATENTS mobile ---- */
   .ip-grid {
     grid-template-columns: 1fr;
   }
 
+  /* ---- MODAL mobile ---- */
+  .modal-overlay {
+    padding: var(--space-4);
+  }
+
+  .modal-header {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .modal-body {
+    padding: var(--space-5);
+  }
+
   .modal-meta {
     grid-template-columns: 1fr;
+  }
+
+  .pdf-modal__frame-wrap {
+    min-height: 380px;
+    height: 55vh;
+  }
+
+  /* ---- ACHIEVEMENTS STATS mobile ---- */
+  .achievements__stats {
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .achievements__stat-value {
+    font-size: var(--text-2xl);
   }
 }
 
@@ -2950,6 +3039,260 @@ ul {
 
   .timeline__items {
     grid-template-columns: 1fr;
+  }
+
+  /* Hero refinements for tablets / small screens */
+  .hero__portrait-stage {
+    max-width: 240px;
+  }
+
+  .hero__name {
+    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+  }
+
+  .hero__statement {
+    font-size: var(--text-lg);
+  }
+
+  /* About image scales down */
+  .about__invention-img {
+    max-width: 280px;
+  }
+
+  .about__image-side::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Recognition images stack fully */
+  .recognition__img-card {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  /* Footer bottom stack */
+  .footer__bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-py: 3rem;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  /* ---- HERO very small screens ---- */
+  .hero__inner {
+    padding-top: calc(var(--nav-height) + 1.5rem);
+    gap: var(--space-6);
+  }
+
+  .hero__portrait-stage {
+    max-width: 200px;
+  }
+
+  .hero__name {
+    font-size: var(--text-3xl);
+  }
+
+  .hero__profession {
+    font-size: var(--text-base);
+  }
+
+  .hero__statement {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero__cta-grid {
+    max-width: 100%;
+  }
+
+  .hero__cta-grid .btn-lg {
+    font-size: var(--text-sm);
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .hero__download,
+  .hero__google-verify {
+    font-size: var(--text-xs);
+  }
+
+  .hero__portrait-badge {
+    font-size: 10px;
+    padding: var(--space-2) var(--space-3);
+    bottom: 12px;
+    right: 12px;
+  }
+
+  /* ---- ABOUT very small screens ---- */
+  .about__bio {
+    font-size: var(--text-sm);
+    text-align: left;
+  }
+
+  .about__content-side {
+    padding: var(--space-4) 0;
+  }
+
+  .about__invention-img {
+    max-width: 240px;
+  }
+
+  .about__image-side::before {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about__image-caption {
+    font-size: var(--text-xs);
+    max-width: 240px;
+  }
+
+  /* ---- SECTION TITLES very small screens ---- */
+  .section-title {
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-3xl));
+  }
+
+  .section-subtitle {
+    font-size: var(--text-base);
+  }
+
+  /* ---- STATS very small screens ---- */
+  .stats-row__number {
+    font-size: var(--text-2xl);
+  }
+
+  .stats-row__label {
+    font-size: var(--text-xs);
+  }
+
+  /* ---- ACHIEVEMENTS very small screens ---- */
+  .achievements__stats {
+    padding: var(--space-5) var(--space-3);
+    gap: var(--space-3);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .achievements__stat {
+    text-align: center;
+  }
+
+  .achievements__stat-value {
+    font-size: var(--text-xl);
+  }
+
+  .achievements__stat-label {
+    font-size: var(--text-xs);
+  }
+
+  /* ---- INVENTION CARDS very small screens ---- */
+  .invention-card__head {
+    padding: var(--space-4);
+    min-height: 130px;
+  }
+
+  .invention-card__title {
+    font-size: var(--text-lg);
+  }
+
+  /* ---- RECOGNITION very small screens ---- */
+  .recognition__letter {
+    padding: var(--space-4);
+  }
+
+  .recognition__quote-text {
+    font-size: var(--text-lg);
+  }
+
+  .recognition__quote-mark {
+    font-size: 48px;
+  }
+
+  /* ---- ENDORSEMENT CARDS very small screens ---- */
+  .endorsement-card {
+    padding: var(--space-5);
+  }
+
+  .endorsement-card__title {
+    font-size: var(--text-base);
+  }
+
+  .endorsement-card__desc {
+    font-size: var(--text-xs);
+  }
+
+  /* ---- CONTACT very small screens ---- */
+  .contact__card {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .contact__info-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact__info-value {
+    font-size: var(--text-sm);
+  }
+
+  /* ---- MODAL very small screens ---- */
+  .modal-overlay {
+    padding: var(--space-2);
+  }
+
+  .modal-content {
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .modal-title {
+    font-size: var(--text-lg);
+  }
+
+  .modal-body {
+    padding: var(--space-4);
+  }
+
+  .pdf-modal__frame-wrap {
+    min-height: 300px;
+    height: 50vh;
+  }
+
+  /* ---- FOOTER very small screens ---- */
+  .footer {
+    padding: var(--space-10) 0 var(--space-6);
+  }
+
+  .footer__brand-name {
+    font-size: var(--text-xl);
+  }
+
+  .footer__contact-item {
+    padding: 8px 10px;
+  }
+
+  .footer__contact-value {
+    font-size: var(--text-xs);
+  }
+
+  /* ---- IP CARDS very small screens ---- */
+  .ip-card {
+    padding: 1rem;
+  }
+
+  .ip-card__title {
+    font-size: 0.85rem;
   }
 }
 
