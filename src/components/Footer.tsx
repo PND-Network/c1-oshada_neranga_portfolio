@@ -137,6 +137,9 @@ export default function Footer() {
             <p className="footer__copyright">
               &copy; 2026 G.H.D. Oshada Neranga. All rights reserved.
             </p>
+            <p className="footer__powered-by">
+              Powered by PND Network
+            </p>
             <p className="footer__tag-badge">
               Innovation · Sustainability · Engineering · Impact
             </p>
