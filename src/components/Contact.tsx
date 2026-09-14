@@ -19,10 +19,9 @@ export default function Contact() {
         <ScrollReveal delay={1}>
           <div className="contact__grid">
             {/* Phone */}
-            <button
-              type="button"
-              onClick={() => { window.location.href = 'tel:+94764689418'; }}
+            <div
               className="contact__card"
+              style={{ cursor: 'default' }}
             >
               <div className="contact__info-icon" aria-hidden="true">
                 <Phone size={20} />
@@ -31,7 +30,7 @@ export default function Contact() {
                 <div className="contact__info-label">Phone</div>
                 <div className="contact__info-value">+94 76 468 9418</div>
               </div>
-            </button>
+            </div>
 
             {/* Email */}
             <button
