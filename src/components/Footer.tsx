@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { ArrowUp, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
+  const [showPhone, setShowPhone] = useState(false);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -76,12 +79,29 @@ export default function Footer() {
               </button>
               <button
                 type="button"
-                onClick={() => { window.location.href = 'tel:+94764689418'; }}
+                onClick={() => setShowPhone(p => !p)}
                 className="footer__social-btn"
-                aria-label="Phone"
+                aria-label="Show phone number"
+                style={{ cursor: 'pointer' }}
               >
                 <Phone size={18} />
               </button>
+              {showPhone && (
+                <span style={{
+                  color: 'rgba(255,255,255,0.85)',
+                  fontSize: '0.8rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.04em',
+                  whiteSpace: 'nowrap',
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: '6px',
+                  padding: '4px 10px',
+                  lineHeight: 1,
+                }}>
+                  +94 76 468 9418
+                </span>
+              )}
             </div>
           </div>
 
@@ -120,10 +140,9 @@ export default function Footer() {
                   <span className="footer__contact-value">oshadaneranga4@gmail.com</span>
                 </div>
               </button>
-              <button
-                type="button"
-                onClick={() => { window.location.href = 'tel:+94764689418'; }}
+              <div
                 className="footer__contact-item"
+                style={{ cursor: 'default' }}
               >
                 <div className="footer__contact-icon">
                   <Phone size={16} />
@@ -132,7 +151,7 @@ export default function Footer() {
                   <span className="footer__contact-label">Phone</span>
                   <span className="footer__contact-value">+94 76 468 9418</span>
                 </div>
-              </button>
+              </div>
             </div>
 
             <button
