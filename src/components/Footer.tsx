@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { ArrowUp, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const [showPhone, setShowPhone] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -69,39 +66,6 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </button>
-              <button
-                type="button"
-                onClick={() => { window.location.href = 'mailto:oshadaneranga4@gmail.com'; }}
-                className="footer__social-btn"
-                aria-label="Email"
-              >
-                <Mail size={18} />
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowPhone(p => !p)}
-                className="footer__social-btn"
-                aria-label="Show phone number"
-                style={{ cursor: 'pointer' }}
-              >
-                <Phone size={18} />
-              </button>
-              {showPhone && (
-                <span style={{
-                  color: 'rgba(255,255,255,0.85)',
-                  fontSize: '0.8rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.04em',
-                  whiteSpace: 'nowrap',
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  borderRadius: '6px',
-                  padding: '4px 10px',
-                  lineHeight: 1,
-                }}>
-                  +94 76 468 9418
-                </span>
-              )}
             </div>
           </div>
 
@@ -169,6 +133,9 @@ export default function Footer() {
           <div className="footer__bottom-inner">
             <p className="footer__copyright">
               &copy; 2026 G.H.D. Oshada Neranga. All rights reserved.
+            </p>
+            <p className="footer__powered-by">
+              Powered by PND Network
             </p>
             <p className="footer__tag-badge">
               Innovation · Sustainability · Engineering · Impact

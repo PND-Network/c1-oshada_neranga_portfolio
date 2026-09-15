@@ -2469,7 +2469,7 @@ ul {
 }
 
 .footer__brand-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-2xl);
   font-weight: 600;
   color: #FFFFFF;
@@ -2648,6 +2648,11 @@ ul {
 .footer__copyright {
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__powered-by {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .footer__tag-badge {
@@ -3634,4 +3639,4 @@ footer[id] {
   to {
     width: 0%;
   }
-}
+}
