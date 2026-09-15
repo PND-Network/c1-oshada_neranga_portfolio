@@ -245,6 +245,23 @@ export default function Inventions() {
               </>
             )}
 
+            {/* Certificates */}
+            {activeInv.certificates && activeInv.certificates.length > 0 && (
+              <>
+                <h4 className="inv-modal__section-label" style={{ marginTop: 'var(--space-6)' }}>Certificates</h4>
+                <div className="inv-modal__certificates" style={{ display: 'grid', gridTemplateColumns: activeInv.certificates.length === 1 ? 'minmax(200px, 350px)' : 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-4)', marginTop: 'var(--space-2)' }}>
+                  {activeInv.certificates.map((cert, idx) => (
+                    <img 
+                      key={idx} 
+                      src={cert} 
+                      alt={`Certificate ${idx + 1} for ${activeInv.title}`} 
+                      style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-200)' }} 
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+
           </div>
         </Modal>
       )}

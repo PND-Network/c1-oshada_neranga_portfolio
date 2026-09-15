@@ -8,6 +8,7 @@ export interface Invention {
   awards: string[];
   ipStatus?: string;
   hasEvidence?: boolean;
+  certificates?: string[];
 }
 
 /**
@@ -59,6 +60,12 @@ export const inventions: Invention[] = [
       "STIC Commendation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/recycled porcelain brick - gold.png",
+      "/certificates/recycled porcelain brick 2.png",
+      "/certificates/recycled porcelain brick 3.png",
+      "/certificates/recycled porcelain brick.png"
+    ]
   },
 
   {
@@ -72,6 +79,10 @@ export const inventions: Invention[] = [
       "Ruhuna Invention & Innovation Exhibition: Gold Award",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/porcelain instead of sand and shringle - 1st.png",
+      "/certificates/porcelain brick.png"
+    ]
   },
 
   /* ── BRONZE / NATIONAL-LEVEL AWARDS ────────────────────────────────── */
@@ -90,6 +101,10 @@ export const inventions: Invention[] = [
       "STIC Commendation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/grass cutter between interlock - best.png",
+      "/certificates/grass cutter between interlock.png"
+    ]
   },
 
   {
@@ -106,6 +121,12 @@ export const inventions: Invention[] = [
       "STIC Commendation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/water stock tap for emergency use - bronze.png",
+      "/certificates/water stock tap for emergency use.png",
+      "/certificates/water stock tap for emergency use 2.png",
+      "/certificates/water stock tap for emergency 3.png"
+    ]
   },
 
   /* ── CERTIFICATE OF EXCELLENCE ──────────────────────────────────────── */
@@ -122,6 +143,10 @@ export const inventions: Invention[] = [
       "Ruhuna Invention & Innovation Competition: Certificate of Excellence",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/night visible number plate.png",
+      "/certificates/night visible number plate 2.png"
+    ]
   },
 
   {
@@ -136,6 +161,9 @@ export const inventions: Invention[] = [
       "STIC Commendation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/wide angle rotation camera.png"
+    ]
   },
 
   {
@@ -150,6 +178,9 @@ export const inventions: Invention[] = [
       "STIC Commendation",
     ],
     hasEvidence: false,
+    certificates: [
+      "/certificates/pre warning flood alarm system - 3rd.png"
+    ]
   },
 
   {
@@ -163,6 +194,10 @@ export const inventions: Invention[] = [
       "Ruhuna Invention & Innovation Competition: Certificate of Excellence",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/luminous torch.png",
+      "/certificates/luminous torch 2.png"
+    ]
   },
 
   /* ── CERTIFICATE OF PARTICIPATION ──────────────────────────────────── */
@@ -178,6 +213,9 @@ export const inventions: Invention[] = [
       "Ruhuna Invention & Innovation Exhibition: Certificate of Participation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/high voltage sparker.png"
+    ]
   },
 
   {
@@ -191,6 +229,9 @@ export const inventions: Invention[] = [
       "Ruhuna Invention & Innovation Competition: Certificate of Participation",
     ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/Thread seal cutting device.png"
+    ]
   },
 
   {
