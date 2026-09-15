@@ -22,10 +22,10 @@ export const inventions: Invention[] = [
   {
     id: 1,
     category: "Sustainable Construction",
-    title: "Eco-Friendly High-Strength Construction Brick",
+    title: "Eco-Friendly High Strength Construction Brick",
     problem: "Porcelain waste generated during manufacturing is voluminous, difficult to dispose of, and highly damaging to the environment when landfilled.",
-    concept: "A construction brick manufactured from waste porcelain using high-pressure cold-bonding technology with a ball clay catalyst. The method utilises a bimodal particle distribution of waste porcelain (55% coarse, 37% fine) mixed with 5% dry ball clay and 3% liquid sodium silicate, compacted under 20–40 MPa hydraulic pressure at ambient temperature - no Portland cement or kiln firing required.",
-    value: "An eco-friendly, high-strength construction brick utilising over 90% recycled waste porcelain. The resulting product is a low-cost, high-load-bearing green building material that reduces landfill burden and provides an environmentally sustainable alternative to conventional bricks, with practical application in the brick manufacturing industry.",
+    concept: "A construction brick manufactured from waste porcelain using high pressure cold-bonding technology with a ball clay catalyst. The method utilises a bimodal particle distribution of waste porcelain (55% coarse, 37% fine) mixed with 5% dry ball clay and 3% liquid sodium silicate, compacted under 20–40 MPa hydraulic pressure at ambient temperature - no Portland cement or kiln firing required.",
+    value: "An eco-friendly, high strength construction brick utilising over 90% recycled waste porcelain. The resulting product is a low-cost, high-load-bearing green building material that reduces landfill burden and provides an environmentally sustainable alternative to conventional bricks, with practical application in the brick manufacturing industry.",
     awards: ["STIC Commendation"],
     ipStatus: "Patent Applications Filed: Australia (Patent No: 2026905817), United Kingdom (Patent No: GB2613415.5)",
     hasEvidence: true,
@@ -34,7 +34,7 @@ export const inventions: Invention[] = [
   {
     id: 2,
     category: "Sustainable Construction",
-    title: "Water-Storing Building Block with Internal Reservoirs",
+    title: "Water Storing Building Block with Internal Reservoirs",
     problem: "Conventional building blocks serve a purely structural purpose and contribute nothing to on-site water storage or resource management, leaving buildings unprepared for water shortages or emergencies.",
     concept: "A structural building block incorporating internal hollow reservoirs designed to store water within the body of the block itself, integrating passive water storage directly into the building fabric without reducing structural integrity.",
     value: "Provides dual-function construction elements that serve both structural and water-storage purposes, enabling buildings and infrastructure to contribute to water resilience - particularly valuable in areas prone to water shortages or emergency disruptions.",
@@ -50,7 +50,7 @@ export const inventions: Invention[] = [
     category: "Sustainable Construction",
     title: "Recycled Porcelain Brick",
     problem: "Industrial porcelain waste is generated in large quantities during manufacturing and is difficult to repurpose through conventional means, creating an ongoing environmental and waste-management burden.",
-    concept: "A high-strength construction brick engineered primarily from recycled waste porcelain, optimised through controlled particle grading and binding to achieve superior compressive strength and durability without reliance on traditional raw materials.",
+    concept: "A high strength construction brick engineered primarily from recycled waste porcelain, optimised through controlled particle grading and binding to achieve superior compressive strength and durability without reliance on traditional raw materials.",
     value: "Strong porcelain brick technology utilising recycled porcelain waste for sustainable construction - reducing industrial waste, lowering material costs, and providing an environmentally responsible alternative to conventional bricks.",
     awards: [
       "Ruhuna Invention & Innovation Competition: Gold Award",
