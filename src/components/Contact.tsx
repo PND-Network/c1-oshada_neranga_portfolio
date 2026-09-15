@@ -6,7 +6,8 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    inquiryType: 'Patent Licensing & Commercialization',
+    country: '',
+    inquiryType: '',
     subject: '',
     message: ''
   });
@@ -34,6 +35,12 @@ export default function Contact() {
     setErrorMessage(null);
 
     try {
+      const sriLankanTime = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Colombo',
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      }).format(new Date()) + ' (Sri Lanka Time, GMT+5:30)';
+
       const response = await fetch('https://formsubmit.co/ajax/oshadaneranga4@gmail.com', {
         method: 'POST',
         headers: {
@@ -43,9 +50,11 @@ export default function Contact() {
         body: JSON.stringify({
           'Name / Organization': formData.name,
           'Email': formData.email,
+          'Country': formData.country,
           'Inquiry Type': formData.inquiryType,
           'Subject': formData.subject,
           'Message': formData.message,
+          'Submitted Date & Time': sriLankanTime,
           '_subject': `[Portfolio Inquiry] ${formData.subject} (${formData.name})`,
           '_template': 'table'
         })
@@ -57,7 +66,8 @@ export default function Contact() {
         setFormData({
           name: '',
           email: '',
-          inquiryType: 'Patent Licensing & Commercialization',
+          country: '',
+          inquiryType: '',
           subject: '',
           message: ''
         });
@@ -113,8 +123,14 @@ export default function Contact() {
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                  <label htmlFor="country" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Country *</label>
+                  <input required type="text" id="country" name="country" value={formData.country} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                   <label htmlFor="inquiryType" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Inquiry Type / Purpose *</label>
-                  <select required id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }}>
+                  <select required id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: formData.inquiryType ? 'inherit' : 'var(--color-gray-400)', fontFamily: 'inherit', fontSize: 'var(--text-base)' }}>
+                    <option value="" disabled>-- Select Inquiry Type / Purpose --</option>
                     <option value="Patent Licensing & Commercialization">Patent Licensing & Commercialization</option>
                     <option value="R&D Collaboration & Prototyping">R&D Collaboration & Prototyping</option>
                     <option value="Investor / Incubation Inquiry">Investor / Incubation Inquiry</option>
