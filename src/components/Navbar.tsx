@@ -13,9 +13,17 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    const hashId = window.location.hash.replace('#', '');
+    return window.scrollY > 50 || (!!hashId && hashId !== 'home');
+  });
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(() => {
+    if (typeof window === 'undefined') return 'home';
+    const hashId = window.location.hash.replace('#', '');
+    return hashId || 'home';
+  });
   const isProgrammaticScrollRef = useRef(false);
   const scrollTimeoutRef = useRef<number | null>(null);
 
@@ -37,13 +45,14 @@ export default function Navbar() {
     }
 
     const handleScroll = () => {
-      if (isProgrammaticScrollRef.current) return;
-
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
 
+      // Always update scrolled state so navbar never stays transparent over light sections
       setScrolled(scrollY > 50);
+
+      if (isProgrammaticScrollRef.current) return;
 
       // Edge case 1: Near top of page -> activate home
       if (scrollY < 80) {
@@ -115,6 +124,13 @@ export default function Navbar() {
     const id = href.replace('#', '');
     setActiveSection(id);
 
+    // Immediately update scrolled state so navbar transitions to solid right away
+    if (id !== 'home') {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+
     const el = document.getElementById(id);
     if (el) {
       isProgrammaticScrollRef.current = true;
@@ -129,6 +145,7 @@ export default function Navbar() {
 
       scrollTimeoutRef.current = window.setTimeout(() => {
         isProgrammaticScrollRef.current = false;
+        setScrolled(window.scrollY > 50);
       }, 800);
     }
   };

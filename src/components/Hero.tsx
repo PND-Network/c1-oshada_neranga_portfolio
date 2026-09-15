@@ -3,7 +3,15 @@ import portrait from '../assets/images/portrait.jpg';
 
 export default function Hero() {
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById(id);
+    if (el) {
+      const navHeight = 72;
+      const elementTop = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: Math.max(0, elementTop - navHeight),
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
