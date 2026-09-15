@@ -23,13 +23,23 @@ export const inventions: Invention[] = [
   {
     id: 1,
     category: "Sustainable Construction",
-    title: "Eco-Friendly High Strength Construction Brick",
-    problem: "Porcelain waste generated during manufacturing is voluminous, difficult to dispose of, and highly damaging to the environment when landfilled.",
-    concept: "A construction brick manufactured from waste porcelain using high pressure cold-bonding technology with a ball clay catalyst. The method utilises a bimodal particle distribution of waste porcelain (55% coarse, 37% fine) mixed with 5% dry ball clay and 3% liquid sodium silicate, compacted under 20–40 MPa hydraulic pressure at ambient temperature - no Portland cement or kiln firing required.",
-    value: "An eco-friendly, high strength construction brick utilising over 90% recycled waste porcelain. The resulting product is a low-cost, high-load-bearing green building material that reduces landfill burden and provides an environmentally sustainable alternative to conventional bricks, with practical application in the brick manufacturing industry.",
-    awards: ["STIC Commendation"],
-    ipStatus: "Patent Applications Filed: Australia (Patent No: 2026905817), United Kingdom (Patent No: GB2613415.5)",
+    title: "Recycled Porcelain Brick",
+    problem: "Industrial porcelain waste is generated in large quantities during manufacturing and is difficult to repurpose through conventional means, creating an ongoing environmental and waste-management burden.",
+    concept: "A high strength construction brick engineered primarily from recycled waste porcelain, optimised through controlled particle grading and binding to achieve superior compressive strength and durability without reliance on traditional raw materials.",
+    value: "Strong porcelain brick technology utilising recycled porcelain waste for sustainable construction - reducing industrial waste, lowering material costs, and providing an environmentally responsible alternative to conventional bricks.",
+    awards: [
+      "Ruhuna Invention & Innovation Competition: Gold Award",
+      "National & Provincial Recognition",
+      "Sahasak Nimavum: Certificate of Excellence",
+      "STIC Commendation",
+    ],
     hasEvidence: true,
+    certificates: [
+      "/certificates/recycled porcelain brick - gold.png",
+      "/certificates/recycled porcelain brick 2.png",
+      "/certificates/recycled porcelain brick 3.png",
+      "/certificates/recycled porcelain brick.png"
+    ]
   },
 
   {
@@ -49,23 +59,13 @@ export const inventions: Invention[] = [
   {
     id: 3,
     category: "Sustainable Construction",
-    title: "Recycled Porcelain Brick",
-    problem: "Industrial porcelain waste is generated in large quantities during manufacturing and is difficult to repurpose through conventional means, creating an ongoing environmental and waste-management burden.",
-    concept: "A high strength construction brick engineered primarily from recycled waste porcelain, optimised through controlled particle grading and binding to achieve superior compressive strength and durability without reliance on traditional raw materials.",
-    value: "Strong porcelain brick technology utilising recycled porcelain waste for sustainable construction - reducing industrial waste, lowering material costs, and providing an environmentally responsible alternative to conventional bricks.",
-    awards: [
-      "Ruhuna Invention & Innovation Competition: Gold Award",
-      "National & Provincial Recognition",
-      "Sahasak Nimavum: Certificate of Excellence",
-      "STIC Commendation",
-    ],
+    title: "Eco-Friendly High Strength Construction Brick",
+    problem: "Porcelain waste generated during manufacturing is voluminous, difficult to dispose of, and highly damaging to the environment when landfilled.",
+    concept: "A construction brick manufactured from waste porcelain using high pressure cold-bonding technology with a ball clay catalyst. The method utilises a bimodal particle distribution of waste porcelain (55% coarse, 37% fine) mixed with 5% dry ball clay and 3% liquid sodium silicate, compacted under 20–40 MPa hydraulic pressure at ambient temperature - no Portland cement or kiln firing required.",
+    value: "An eco-friendly, high strength construction brick utilising over 90% recycled waste porcelain. The resulting product is a low-cost, high-load-bearing green building material that reduces landfill burden and provides an environmentally sustainable alternative to conventional bricks, with practical application in the brick manufacturing industry.",
+    awards: ["STIC Commendation"],
+    ipStatus: "Patent Applications Filed: Australia (Patent No: 2026905817), United Kingdom (Patent No: GB2613415.5)",
     hasEvidence: true,
-    certificates: [
-      "/certificates/recycled porcelain brick - gold.png",
-      "/certificates/recycled porcelain brick 2.png",
-      "/certificates/recycled porcelain brick 3.png",
-      "/certificates/recycled porcelain brick.png"
-    ]
   },
 
   {
