@@ -979,17 +979,7 @@ ul {
 
 /* Ring via the image's own ::before on the side wrapper */
 .about__image-side::before {
-  content: '';
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(197, 180, 149, 0.30);
-  animation: about-ring-spin 18s linear infinite;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 /* Outer glow halo */
