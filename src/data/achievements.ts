@@ -15,7 +15,7 @@ export const achievementTimeline: YearGroup[] = [
     items: [
       {
         award: "Certificate",
-        name: "Computer Literacy Certificate Programme",
+        name: "Computer Literacy Certificate Course",
         description: "The Open University of Sri Lanka",
       },
     ],

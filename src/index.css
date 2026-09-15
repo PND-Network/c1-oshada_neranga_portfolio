@@ -979,17 +979,7 @@ ul {
 
 /* Ring via the image's own ::before on the side wrapper */
 .about__image-side::before {
-  content: '';
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(197, 180, 149, 0.30);
-  animation: about-ring-spin 18s linear infinite;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 /* Outer glow halo */
@@ -3581,5 +3571,72 @@ ul {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Section Scroll Margin for Fixed Navbar ── */
+section[id],
+footer[id] {
+  scroll-margin-top: 76px;
+}
+
+/* ── Contact Success Popup ── */
+.contact-popup {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  max-width: 450px;
+  background-color: #0B0C0E;
+  color: #FFFFFF;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  animation: slideInPopup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-popup {
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+@keyframes slideInPopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 }

@@ -13,13 +13,13 @@ const endorsements: EndorsementItem[] = [
   {
     url: 'https://www.facebook.com/share/1NDGQyoD4n/',
     title: 'National Innovation & Patents Feature',
-    desc: 'Public tribute recognizing Sahasak Nimavum competition medals, patent-pending utility system solutions (LK/P/1/23235 & LK/P/1/23387), flood warning infrastructure, and recycled porcelain brick technology.',
+    desc: 'Public tribute recognizing Sahasak Nimavum competition medals, patent pending utility system solutions (LK/P/1/23235 & LK/P/1/23387), flood warning infrastructure, and recycled porcelain brick technology.',
     actionText: 'View Endorsement Post',
   },
   {
     url: 'https://www.facebook.com/share/18xJ8TZitY/',
     title: 'International Mechanism Demonstration',
-    desc: "Live operating video demonstration reel showcasing the practical operation of Oshada's patented mechanical technology with international enthusiasm.",
+    desc: "Live demonstration video showcasing the practical operation of Oshada’s mechanical technology featuring a Pre-Warning Flood Detection and Alert System.",
     actionText: 'Watch Video Reel',
   },
   {
