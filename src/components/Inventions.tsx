@@ -149,7 +149,7 @@ export default function Inventions() {
               Original Technologies<br />Addressing Real Problems
             </h2>
             <p className="section-subtitle">
-              Each invention is evidence-based and has been presented at recognised national-level innovation competitions. Supporting documentation is available for review.
+              Each invention is evidence based and has been presented at recognised national level innovation competitions. Supporting documentation is available for review.
             </p>
           </div>
         </ScrollReveal>
