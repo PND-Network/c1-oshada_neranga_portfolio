@@ -35,6 +35,12 @@ export default function Contact() {
     setErrorMessage(null);
 
     try {
+      const sriLankanTime = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Colombo',
+        dateStyle: 'full',
+        timeStyle: 'medium',
+      }).format(new Date()) + ' (Sri Lanka Time, GMT+5:30)';
+
       const response = await fetch('https://formsubmit.co/ajax/oshadaneranga4@gmail.com', {
         method: 'POST',
         headers: {
@@ -48,6 +54,7 @@ export default function Contact() {
           'Inquiry Type': formData.inquiryType,
           'Subject': formData.subject,
           'Message': formData.message,
+          'Submitted Date & Time': sriLankanTime,
           '_subject': `[Portfolio Inquiry] ${formData.subject} (${formData.name})`,
           '_template': 'table'
         })
