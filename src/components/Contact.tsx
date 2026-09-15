@@ -34,7 +34,7 @@ export default function Contact() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/oshadaneranga4@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/wathsalaattanayake002@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -221,7 +221,7 @@ export default function Contact() {
             </div>
 
             <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: '#C9C5BC', lineHeight: 1.5 }}>
-              Thank you! Your message has been sent directly to <strong>oshadaneranga4@gmail.com</strong>. Oshada will get back to you shortly.
+              Thank you! Your message has been sent directly to <strong>wathsalaattanayake002@gmail.com</strong>. Oshada will get back to you shortly.
             </p>
 
             <div
