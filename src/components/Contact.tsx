@@ -6,6 +6,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    country: '',
     inquiryType: 'Patent Licensing & Commercialization',
     subject: '',
     message: ''
@@ -43,6 +44,7 @@ export default function Contact() {
         body: JSON.stringify({
           'Name / Organization': formData.name,
           'Email': formData.email,
+          'Country': formData.country,
           'Inquiry Type': formData.inquiryType,
           'Subject': formData.subject,
           'Message': formData.message,
@@ -57,6 +59,7 @@ export default function Contact() {
         setFormData({
           name: '',
           email: '',
+          country: '',
           inquiryType: 'Patent Licensing & Commercialization',
           subject: '',
           message: ''
@@ -110,6 +113,11 @@ export default function Contact() {
                     <label htmlFor="email" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Email Address *</label>
                     <input required type="email" id="email" name="email" value={formData.email} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
                   </div>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                  <label htmlFor="country" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Country *</label>
+                  <input required type="text" id="country" name="country" value={formData.country} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
