@@ -130,7 +130,7 @@ export default function Contact() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                   <label htmlFor="inquiryType" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Inquiry Type / Purpose *</label>
                   <select required id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: formData.inquiryType ? 'inherit' : 'var(--color-gray-400)', fontFamily: 'inherit', fontSize: 'var(--text-base)' }}>
-                    <option value="" disabled>-- Select Inquiry Type / Purpose --</option>
+                    <option value="" disabled>-- Select Purpose --</option>
                     <option value="Patent Licensing & Commercialization">Patent Licensing & Commercialization</option>
                     <option value="R&D Collaboration & Prototyping">R&D Collaboration & Prototyping</option>
                     <option value="Investor / Incubation Inquiry">Investor / Incubation Inquiry</option>
