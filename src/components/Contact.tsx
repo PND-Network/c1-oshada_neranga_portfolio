@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { CheckCircle2, Send, Loader2, X, AlertCircle, Mail, MapPin } from 'lucide-react';
+import { CheckCircle2, Send, Loader2, X, AlertCircle } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
@@ -97,10 +97,9 @@ export default function Contact() {
       <div className="container contact__container">
         <ScrollReveal>
           <div className="contact__header">
-            <span className="section-label">Professional Contact</span>
-            <div className="gold-line" />
+
             <h2 className="section-title contact__title">
-              Get in Touch &amp;<br /> Collaboration
+              Get in Touch &amp; Collaboration
             </h2>
             <p className="contact__intro">
               For patent licensing, collaborative R&amp;D partnerships, technology prototyping or general professional inquiries, please submit your request below.
@@ -108,163 +107,127 @@ export default function Contact() {
           </div>
         </ScrollReveal>
 
-        <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-          <ScrollReveal delay={1}>
-            <div className="contact__form-card">
-              {/* Corner architectural drafting brackets */}
-              <div className="contact__corner contact__corner--tl" aria-hidden="true" />
-              <div className="contact__corner contact__corner--br" aria-hidden="true" />
+        <ScrollReveal delay={1}>
+          <div className="contact__form-card">
 
-              <form onSubmit={handleSubmit} className="contact__form">
-                <div className="contact__form-row">
-                  <div className="contact__form-group">
-                    <label htmlFor="name" className="contact__label">Full Name / Organization *</label>
-                    <input
-                      required
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="e.g. Dr. Arthur Silva / Apex Innovations"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="contact__input"
-                    />
-                  </div>
-
-                  <div className="contact__form-group">
-                    <label htmlFor="email" className="contact__label">Email Address *</label>
-                    <input
-                      required
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="e.g. arthur@organization.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="contact__input"
-                    />
-                  </div>
-                </div>
-
-                <div className="contact__form-group">
-                  <label htmlFor="country" className="contact__label">Country *</label>
-                  <input
-                    required
-                    type="text"
-                    id="country"
-                    name="country"
-                    placeholder="e.g. Sri Lanka, United States, Germany..."
-                    value={formData.country}
-                    onChange={handleChange}
-                    className="contact__input"
-                  />
-                </div>
-
-                <div className="contact__form-group">
-                  <label htmlFor="inquiryType" className="contact__label">Inquiry Type / Purpose *</label>
-                  <select
-                    required
-                    id="inquiryType"
-                    name="inquiryType"
-                    value={formData.inquiryType}
-                    onChange={handleChange}
-                    className="contact__select"
-                  >
-                    <option value="" disabled>-- Select Purpose --</option>
-                    <option value="Patent Licensing & Commercialization">Patent Licensing & Commercialization</option>
-                    <option value="R&D Collaboration & Prototyping">R&D Collaboration & Prototyping</option>
-                    <option value="Investor / Incubation Inquiry">Investor / Incubation Inquiry</option>
-                    <option value="Media, Press & Exhibitions">Media, Press & Exhibitions</option>
-                    <option value="General Discussion">General Discussion</option>
-                  </select>
-                </div>
-
-                <div className="contact__form-group">
-                  <label htmlFor="subject" className="contact__label">Subject *</label>
-                  <input
-                    required
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="e.g. Proposal for Flood Detection Infrastructure Partnership"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="contact__input"
-                  />
-                </div>
-
-                <div className="contact__form-group">
-                  <label htmlFor="message" className="contact__label">Your Message *</label>
-                  <textarea
-                    required
-                    id="message"
-                    name="message"
-                    rows={6}
-                    placeholder="Provide details regarding your inquiry, technical interest, or collaboration scope..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="contact__textarea"
-                    style={{ resize: 'vertical' }}
-                  />
-                </div>
-
-                {errorMessage && (
-                  <div className="contact__error-alert">
-                    <AlertCircle size={16} />
-                    <span>{errorMessage}</span>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="contact__submit-btn"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 size={18} className="spin-animation" />
-                      <span>Sending Message...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
-          </ScrollReveal>
-
-          {/* Direct Quick Inquiries */}
-          <ScrollReveal delay={2}>
-            <div className="contact__direct-grid">
-              <a
-                href="mailto:oshadaneranga4@gmail.com"
-                className="contact__direct-card"
-                aria-label="Direct Email"
-              >
-                <div className="contact__direct-icon">
-                  <Mail size={18} />
-                </div>
-                <div>
-                  <div className="contact__direct-label">Direct Email</div>
-                  <div className="contact__direct-val">oshadaneranga4@gmail.com</div>
-                </div>
-              </a>
-
-              <div className="contact__direct-card">
-                <div className="contact__direct-icon">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <div className="contact__direct-label">Location</div>
-                  <div className="contact__direct-val">Southern Province, Sri Lanka</div>
-                </div>
+            <form onSubmit={handleSubmit} className="contact__form">
+              <div className="contact__form-group">
+                <label htmlFor="name" className="contact__label">Full Name / Organization *</label>
+                <input
+                  required
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Dr. Arthur Silva / Apex Innovations"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="contact__input"
+                />
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
+
+              <div className="contact__form-group">
+                <label htmlFor="email" className="contact__label">Email Address *</label>
+                <input
+                  required
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="e.g. arthur@organization.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="contact__input"
+                />
+              </div>
+
+              <div className="contact__form-group">
+                <label htmlFor="country" className="contact__label">Country *</label>
+                <input
+                  required
+                  type="text"
+                  id="country"
+                  name="country"
+                  placeholder="e.g. Sri Lanka, United States, Germany..."
+                  value={formData.country}
+                  onChange={handleChange}
+                  className="contact__input"
+                />
+              </div>
+
+              <div className="contact__form-group">
+                <label htmlFor="inquiryType" className="contact__label">Inquiry Type / Purpose *</label>
+                <select
+                  required
+                  id="inquiryType"
+                  name="inquiryType"
+                  value={formData.inquiryType}
+                  onChange={handleChange}
+                  className="contact__select"
+                >
+                  <option value="" disabled>-- Select Purpose --</option>
+                  <option value="Patent Licensing & Commercialization">Patent Licensing & Commercialization</option>
+                  <option value="R&D Collaboration & Prototyping">R&D Collaboration & Prototyping</option>
+                  <option value="Investor / Incubation Inquiry">Investor / Incubation Inquiry</option>
+                  <option value="Media, Press & Exhibitions">Media, Press & Exhibitions</option>
+                  <option value="General Discussion">General Discussion</option>
+                </select>
+              </div>
+
+              <div className="contact__form-group contact__form-group--full">
+                <label htmlFor="subject" className="contact__label">Subject *</label>
+                <input
+                  required
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="e.g. Proposal for Flood Detection Infrastructure Partnership"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="contact__input"
+                />
+              </div>
+
+              <div className="contact__form-group contact__form-group--full">
+                <label htmlFor="message" className="contact__label">Your Message *</label>
+                <textarea
+                  required
+                  id="message"
+                  name="message"
+                  rows={6}
+                  placeholder="Provide details regarding your inquiry, technical interest, or collaboration scope..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="contact__textarea"
+                  style={{ resize: 'vertical' }}
+                />
+              </div>
+
+              {errorMessage && (
+                <div className="contact__error-alert contact__form-group--full">
+                  <AlertCircle size={16} />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="contact__submit-btn contact__form-group--full"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={18} className="spin-animation" />
+                    <span>Sending Message...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    <span>Send Message</span>
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+        </ScrollReveal>
       </div>
 
       {/* Successfully Sent Popup */}
