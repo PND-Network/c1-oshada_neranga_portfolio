@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
+import logoW from '../assets/images/logo W.png';
+import logoB from '../assets/images/logo B.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -161,11 +163,19 @@ export default function Navbar() {
             className="navbar__brand"
             onClick={() => handleLinkClick('#home')}
             aria-label="G.H.D. Oshada Neranga — Home"
+            style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px' }}
           >
-            <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-              G.H.D. Oshada Neranga
-            </span>
-            <span className="navbar__title">Inventor</span>
+            <img 
+              src={isLight ? logoW : logoB} 
+              alt="Logo" 
+              style={{ height: '40px', width: 'auto', objectFit: 'contain' }} 
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
+                G.H.D. Oshada Neranga
+              </span>
+              <span className="navbar__title">Inventor</span>
+            </div>
           </button>
 
           <ul className="navbar__links" role="list">

@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import newspaperImage from '../assets/images/newspaper.png';
 
 interface EndorsementItem {
   url: string;
@@ -40,6 +41,12 @@ const endorsements: EndorsementItem[] = [
     isHighlight: true,
     desc: "Official Google search results and knowledge overview verifying Oshada Neranga's independent research awards, exhibition records, and public credentials.",
     actionText: 'Verify on Google Search',
+  },
+  {
+    url: newspaperImage,
+    title: 'Featured Newspaper Article',
+    desc: 'Read the comprehensive newspaper feature detailing the journey, impact, and national recognition of the inventions.',
+    actionText: 'Read Article',
   },
 ];
 
