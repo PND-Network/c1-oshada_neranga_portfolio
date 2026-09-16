@@ -6,7 +6,8 @@ import ceremony from '../assets/images/ceremony.jpg';
 import image4 from '../assets/images/image_4.jpg';
 
 export default function Recognition() {
-  const [isCommendationOpen, setIsCommendationOpen] = useState(false);
+  const [isCommendation1Open, setIsCommendation1Open] = useState(false);
+  const [isCommendation2Open, setIsCommendation2Open] = useState(false);
 
   return (
     <section id="recognition" className="recognition section-py">
@@ -45,14 +46,23 @@ export default function Recognition() {
                   <div className="recognition__person-title">Director, Southern Technology Incubation Centre<br />University of Ruhuna, Sri Lanka</div>
                 </div>
 
-                <div style={{ marginTop: 'var(--space-6)' }}>
+                <div className="recognition__btn-group">
                   <button
-                    id="recognition-view-commendation-btn"
+                    id="recognition-view-commendation-btn-1"
                     className="btn btn-primary"
-                    onClick={() => setIsCommendationOpen(true)}
+                    onClick={() => setIsCommendation1Open(true)}
                   >
                     <FileText size={14} />
-                    View Commendation Letter
+                    View Commendation Letter 01
+                  </button>
+
+                  <button
+                    id="recognition-view-commendation-btn-2"
+                    className="btn btn-primary"
+                    onClick={() => setIsCommendation2Open(true)}
+                  >
+                    <FileText size={14} />
+                    View Commendation Letter 02
                   </button>
                 </div>
               </div>
@@ -90,10 +100,10 @@ export default function Recognition() {
       </div>
 
 
-      {/* Commendation Letter PDF Modal */}
+      {/* Commendation Letter 01 PDF Modal */}
       <Modal
-        isOpen={isCommendationOpen}
-        onClose={() => setIsCommendationOpen(false)}
+        isOpen={isCommendation1Open}
+        onClose={() => setIsCommendation1Open(false)}
         title="Official Commendation Letter - University of Ruhuna"
       >
         <div className="pdf-modal">
@@ -102,7 +112,7 @@ export default function Recognition() {
             <div className="pdf-modal__buttons">
               <button
                 type="button"
-                onClick={() => window.open('/Commendation%20Letter.pdf', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('/CommendationLetter.pdf', '_blank', 'noopener,noreferrer')}
                 className="btn btn-outline btn-sm"
               >
                 <ExternalLink size={13} />
@@ -112,8 +122,8 @@ export default function Recognition() {
                 type="button"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/Commendation%20Letter.pdf';
-                  link.download = 'Commendation Letter - Oshada Neranga.pdf';
+                  link.href = '/CommendationLetter.pdf';
+                  link.download = 'Commendation Letter 01 - University of Ruhuna STIC.pdf';
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
@@ -127,8 +137,53 @@ export default function Recognition() {
           </div>
           <div className="pdf-modal__frame-wrap">
             <iframe
-              src="/Commendation%20Letter.pdf#toolbar=1"
+              src="/CommendationLetter.pdf#toolbar=1"
               title="Official Commendation Letter - Southern Technology Incubation Centre, University of Ruhuna"
+              className="pdf-modal__iframe"
+            />
+          </div>
+        </div>
+      </Modal>
+
+      {/* Commendation Letter 02 PDF Modal */}
+      <Modal
+        isOpen={isCommendation2Open}
+        onClose={() => setIsCommendation2Open(false)}
+        title="Official Commendation & Awards Confirmation - Sri Lanka Inventors Commission (SLIC)"
+      >
+        <div className="pdf-modal">
+          <div className="pdf-modal__toolbar">
+            <span className="pdf-modal__meta">Ref: SLIC/PROJ/Road Safety 2024 · Issued: 27 July 2026 · Sri Lanka Inventors Commission</span>
+            <div className="pdf-modal__buttons">
+              <button
+                type="button"
+                onClick={() => window.open('/CommendationLetter02.PDF', '_blank', 'noopener,noreferrer')}
+                className="btn btn-outline btn-sm"
+              >
+                <ExternalLink size={13} />
+                Open in New Tab
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/CommendationLetter02.PDF';
+                  link.download = 'Commendation Letter 02 - Sri Lanka Inventors Commission.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="btn btn-primary btn-sm"
+              >
+                <Download size={13} />
+                Download PDF
+              </button>
+            </div>
+          </div>
+          <div className="pdf-modal__frame-wrap">
+            <iframe
+              src="/CommendationLetter02.PDF#toolbar=1"
+              title="Official Commendation & Awards Confirmation - Sri Lanka Inventors Commission (SLIC)"
               className="pdf-modal__iframe"
             />
           </div>
