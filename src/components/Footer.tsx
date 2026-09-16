@@ -34,7 +34,6 @@ export default function Footer() {
         <div className="footer__top">
           {/* Brand */}
           <div className="footer__brand">
-            <div className="footer__gold-bar" />
             <div className="footer__brand-name">G.H.D. Oshada Neranga</div>
             <div className="footer__brand-title">Inventor &amp; Innovator</div>
             <p className="footer__tagline">
