@@ -138,12 +138,14 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <div className="footer__bottom-inner">
-            <p className="footer__copyright">
-              &copy; 2026 G.H.D. Oshada Neranga. All rights reserved.
-            </p>
-            <p className="footer__powered-by">
-              Powered by PND Network
-            </p>
+            <div className="footer__credits">
+              <p className="footer__copyright">
+                &copy; 2026 All rights reserved.
+              </p>
+              <p className="footer__developed-by">
+                Developed By <span className="footer__dev-name">PND NETWORK</span>
+              </p>
+            </div>
             <p className="footer__tag-badge">
               Innovation · Sustainability · Engineering · Impact
             </p>
