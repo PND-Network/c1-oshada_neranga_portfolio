@@ -157,67 +157,88 @@ export default function Navbar() {
   return (
     <>
       <nav className={`navbar ${scrolled ? 'navbar--solid' : 'navbar--transparent'}`}>
-        <div className="container navbar__inner">
+        <div className="navbar__inner">
           <button
             type="button"
             className="navbar__brand"
             onClick={() => handleLinkClick('#home')}
             aria-label="G.H.D. Oshada Neranga — Home"
-            style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px' }}
           >
-            <img 
-              src={isLight ? logoW : logoB} 
-              alt="Logo" 
-              style={{ height: '40px', width: 'auto', objectFit: 'contain' }} 
+            <img
+              src={isLight ? logoW : logoB}
+              alt="Oshada Neranga Signature"
+              className="navbar__signature-img"
             />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <div
+              className={`navbar__brand-divider ${isLight ? 'navbar__brand-divider--light' : ''}`}
+              aria-hidden="true"
+            />
+            <div className="navbar__brand-text">
               <span className={`navbar__name ${isLight ? 'navbar__name--light' : ''}`}>
-                G.H.D. Oshada Neranga
+                Oshada Neranga
               </span>
               <span className="navbar__title">Inventor</span>
             </div>
           </button>
 
           <ul className="navbar__links" role="list">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <button
-                  type="button"
-                  className={`navbar__link ${isLight ? 'navbar__link--light' : ''} ${activeSection === link.href.replace('#', '') ? 'active' : ''}`}
-                  onClick={() => handleLinkClick(link.href)}
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <li key={link.href}>
+                  <button
+                    type="button"
+                    className={`navbar__link ${isLight ? 'navbar__link--light' : ''} ${isActive ? 'active' : ''}`}
+                    onClick={() => handleLinkClick(link.href)}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
 
           <button
-            className={`navbar__hamburger ${isLight ? 'navbar__hamburger--light' : ''}`}
+            className={`navbar__hamburger ${isLight ? 'navbar__hamburger--light' : ''} ${mobileOpen ? 'is-active' : ''}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={20} color={isLight ? 'white' : undefined} /> : (
+            {mobileOpen ? (
+              <X size={22} color={isLight ? '#FFFFFF' : '#0B0C0E'} />
+            ) : (
               <>
-                <span /><span /><span />
+                <span />
+                <span />
+                <span />
               </>
             )}
           </button>
         </div>
       </nav>
 
-      <div className={`navbar__mobile ${mobileOpen ? 'is-open' : ''}`} role="navigation" aria-label="Mobile navigation">
-        {navLinks.map((link) => (
-          <button
-            key={link.href}
-            type="button"
-            className={`navbar__mobile-link ${activeSection === link.href.replace('#', '') ? 'active' : ''}`}
-            onClick={() => handleLinkClick(link.href)}
-          >
-            {link.label}
-          </button>
-        ))}
+      <div
+        className={`navbar__mobile ${mobileOpen ? 'is-open' : ''}`}
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        <div className="navbar__mobile-inner">
+          {navLinks.map((link) => {
+            const isCta = link.href === '#contact';
+            const isActive = activeSection === link.href.replace('#', '');
+            return (
+              <button
+                key={link.href}
+                type="button"
+                className={`navbar__mobile-link ${isCta ? 'navbar__mobile-link--cta' : ''} ${isActive ? 'active' : ''}`}
+                onClick={() => handleLinkClick(link.href)}
+              >
+                <span>{link.label}</span>
+                {isActive && !isCta && <span className="navbar__mobile-active-dot" />}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </>
   );

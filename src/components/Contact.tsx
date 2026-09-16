@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { CheckCircle2, Send, Loader2, X, AlertCircle } from 'lucide-react';
+import { CheckCircle2, Send, Loader2, X, AlertCircle, Mail, MapPin } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
@@ -90,46 +90,86 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact section-py" style={{ backgroundColor: '#fff', color: 'inherit' }}>
-      <div className="container">
+    <section id="contact" className="contact section-py">
+      {/* Background ambient lighting */}
+      <div className="contact__glow" aria-hidden="true" />
+
+      <div className="container contact__container">
         <ScrollReveal>
-          <div style={{ marginBottom: 'var(--space-12)' }}>
+          <div className="contact__header">
             <span className="section-label">Professional Contact</span>
             <div className="gold-line" />
-            <h2 className="section-title">
+            <h2 className="section-title contact__title">
               Get in Touch &amp;<br /> Collaboration
             </h2>
-            <p className="contact__intro" style={{ maxWidth: '800px', marginTop: 'var(--space-4)' }}>
-              For professional enquiries, collaboration discussions or further details,<br /> please fill out the form below.
+            <p className="contact__intro">
+              For patent licensing, collaborative R&amp;D partnerships, technology prototyping or general professional inquiries, please submit your request below.
             </p>
           </div>
         </ScrollReveal>
 
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '820px', margin: '0 auto' }}>
           <ScrollReveal delay={1}>
-            <div style={{ background: '#fff', padding: 'var(--space-8)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', boxShadow: 'var(--shadow-sm)', height: '100%' }}>
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+            <div className="contact__form-card">
+              {/* Corner architectural drafting brackets */}
+              <div className="contact__corner contact__corner--tl" aria-hidden="true" />
+              <div className="contact__corner contact__corner--br" aria-hidden="true" />
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-5)' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                    <label htmlFor="name" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Full Name / Organization *</label>
-                    <input required type="text" id="name" name="name" value={formData.name} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
+              <form onSubmit={handleSubmit} className="contact__form">
+                <div className="contact__form-row">
+                  <div className="contact__form-group">
+                    <label htmlFor="name" className="contact__label">Full Name / Organization *</label>
+                    <input
+                      required
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="e.g. Dr. Arthur Silva / Apex Innovations"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="contact__input"
+                    />
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                    <label htmlFor="email" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Email Address *</label>
-                    <input required type="email" id="email" name="email" value={formData.email} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
+                  <div className="contact__form-group">
+                    <label htmlFor="email" className="contact__label">Email Address *</label>
+                    <input
+                      required
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="e.g. arthur@organization.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="contact__input"
+                    />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  <label htmlFor="country" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Country *</label>
-                  <input required type="text" id="country" name="country" value={formData.country} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
+                <div className="contact__form-group">
+                  <label htmlFor="country" className="contact__label">Country *</label>
+                  <input
+                    required
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="e.g. Sri Lanka, United States, Germany..."
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="contact__input"
+                  />
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  <label htmlFor="inquiryType" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Inquiry Type / Purpose *</label>
-                  <select required id="inquiryType" name="inquiryType" value={formData.inquiryType} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: formData.inquiryType ? 'inherit' : 'var(--color-gray-400)', fontFamily: 'inherit', fontSize: 'var(--text-base)' }}>
+                <div className="contact__form-group">
+                  <label htmlFor="inquiryType" className="contact__label">Inquiry Type / Purpose *</label>
+                  <select
+                    required
+                    id="inquiryType"
+                    name="inquiryType"
+                    value={formData.inquiryType}
+                    onChange={handleChange}
+                    className="contact__select"
+                  >
                     <option value="" disabled>-- Select Purpose --</option>
                     <option value="Patent Licensing & Commercialization">Patent Licensing & Commercialization</option>
                     <option value="R&D Collaboration & Prototyping">R&D Collaboration & Prototyping</option>
@@ -139,18 +179,37 @@ export default function Contact() {
                   </select>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  <label htmlFor="subject" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Subject *</label>
-                  <input required type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)' }} />
+                <div className="contact__form-group">
+                  <label htmlFor="subject" className="contact__label">Subject *</label>
+                  <input
+                    required
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="e.g. Proposal for Flood Detection Infrastructure Partnership"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="contact__input"
+                  />
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  <label htmlFor="message" style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>Your Message *</label>
-                  <textarea required id="message" name="message" value={formData.message} onChange={handleChange} rows={6} style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-300)', background: '#fff', color: 'inherit', fontFamily: 'inherit', fontSize: 'var(--text-base)', resize: 'vertical' }} />
+                <div className="contact__form-group">
+                  <label htmlFor="message" className="contact__label">Your Message *</label>
+                  <textarea
+                    required
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Provide details regarding your inquiry, technical interest, or collaboration scope..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="contact__textarea"
+                    style={{ resize: 'vertical' }}
+                  />
                 </div>
 
                 {errorMessage && (
-                  <div style={{ padding: 'var(--space-3)', borderRadius: 'var(--radius-sm)', backgroundColor: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#DC2626', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)' }}>
+                  <div className="contact__error-alert">
                     <AlertCircle size={16} />
                     <span>{errorMessage}</span>
                   </div>
@@ -159,18 +218,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary"
-                  style={{
-                    marginTop: 'var(--space-2)',
-                    padding: 'var(--space-4) var(--space-8)',
-                    width: 'auto',
-                    alignSelf: 'flex-start',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-2)',
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    opacity: isSubmitting ? 0.75 : 1
-                  }}
+                  className="contact__submit-btn"
                 >
                   {isSubmitting ? (
                     <>
@@ -185,6 +233,35 @@ export default function Contact() {
                   )}
                 </button>
               </form>
+            </div>
+          </ScrollReveal>
+
+          {/* Direct Quick Inquiries */}
+          <ScrollReveal delay={2}>
+            <div className="contact__direct-grid">
+              <a
+                href="mailto:oshadaneranga4@gmail.com"
+                className="contact__direct-card"
+                aria-label="Direct Email"
+              >
+                <div className="contact__direct-icon">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <div className="contact__direct-label">Direct Email</div>
+                  <div className="contact__direct-val">oshadaneranga4@gmail.com</div>
+                </div>
+              </a>
+
+              <div className="contact__direct-card">
+                <div className="contact__direct-icon">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <div className="contact__direct-label">Location</div>
+                  <div className="contact__direct-val">Southern Province, Sri Lanka</div>
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </div>

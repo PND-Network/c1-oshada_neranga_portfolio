@@ -30,7 +30,7 @@ const endorsements: EndorsementItem[] = [
     actionText: 'View Project Update',
   },
   {
-    url: 'https://www.facebook.com/share/p/1JFFhuycWT/',
+    url: 'https://www.facebook.com/share/v/1BxDwVe5La/',
     title: 'Inventor Spotlight & Community Impact',
     desc: "Community showcase highlighting Oshada Neranga's journey, from school-level experimentation to recognized national-level practical innovations.",
     actionText: 'Read Media Story',
