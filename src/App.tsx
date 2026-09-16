@@ -7,6 +7,7 @@ import Achievements from './components/Achievements';
 import IntellectualProperty from './components/IntellectualProperty';
 import Recognition from './components/Recognition';
 import MediaEndorsements from './components/MediaEndorsements';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Recognition />
         <IntellectualProperty />
         <MediaEndorsements />
+        <Contact />
       </main>
       <Footer />
     </>

@@ -149,7 +149,7 @@ export default function Inventions() {
               Original Technologies<br />Addressing Real Problems
             </h2>
             <p className="section-subtitle">
-              Each invention is evidence-based and has been presented at recognised national-level innovation competitions. Supporting documentation is available for review.
+              Each invention is evidence based and has been presented at recognised national level innovation competitions. Supporting documentation is available for review.
             </p>
           </div>
         </ScrollReveal>
@@ -241,6 +241,32 @@ export default function Inventions() {
                     <Shield size={10} />
                     {activeInv.ipStatus}
                   </span>
+                </div>
+              </>
+            )}
+
+            {/* Certificates */}
+            {activeInv.certificates && activeInv.certificates.length > 0 && (
+              <>
+                <h4 className="inv-modal__section-label" style={{ marginTop: 'var(--space-6)' }}>Certificates</h4>
+                <div
+                  className="inv-modal__certificates"
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: activeInv.certificates.length === 1 ? 'minmax(0, 320px)' : 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+                    gap: 'var(--space-4)',
+                    marginTop: 'var(--space-2)',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {activeInv.certificates.map((cert, idx) => (
+                    <img 
+                      key={idx} 
+                      src={cert} 
+                      alt={`Certificate ${idx + 1} for ${activeInv.title}`} 
+                      style={{ width: '100%', maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gray-200)', display: 'block' }} 
+                    />
+                  ))}
                 </div>
               </>
             )}

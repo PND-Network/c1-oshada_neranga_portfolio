@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import newspaperImage from '../assets/images/newspaper.png';
 
 interface EndorsementItem {
   url: string;
@@ -13,13 +14,13 @@ const endorsements: EndorsementItem[] = [
   {
     url: 'https://www.facebook.com/share/1NDGQyoD4n/',
     title: 'National Innovation & Patents Feature',
-    desc: 'Public tribute recognizing Sahasak Nimavum competition medals, patent-pending utility system solutions (LK/P/1/23235 & LK/P/1/23387), flood warning infrastructure, and recycled porcelain brick technology.',
+    desc: 'Public tribute recognizing Sahasak Nimavum competition medals, patent pending utility system solutions (LK/P/1/23235 & LK/P/1/23387), flood warning infrastructure, and recycled porcelain brick technology.',
     actionText: 'View Endorsement Post',
   },
   {
     url: 'https://www.facebook.com/share/18xJ8TZitY/',
     title: 'International Mechanism Demonstration',
-    desc: "Live operating video demonstration reel showcasing the practical operation of Oshada's patented mechanical technology with international enthusiasm.",
+    desc: "Live demonstration video showcasing the practical operation of Oshada’s mechanical technology featuring a Pre-Warning Flood Detection and Alert System.",
     actionText: 'Watch Video Reel',
   },
   {
@@ -40,6 +41,12 @@ const endorsements: EndorsementItem[] = [
     isHighlight: true,
     desc: "Official Google search results and knowledge overview verifying Oshada Neranga's independent research awards, exhibition records, and public credentials.",
     actionText: 'Verify on Google Search',
+  },
+  {
+    url: newspaperImage,
+    title: 'Featured Newspaper Article',
+    desc: 'Read the comprehensive newspaper feature detailing the journey, impact, and national recognition of the inventions.',
+    actionText: 'Read Article',
   },
 ];
 

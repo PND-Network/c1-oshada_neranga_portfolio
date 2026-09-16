@@ -37,7 +37,7 @@ export default function About() {
                 His work spans applied domains from sustainable construction and waste valorisation to public safety, surveillance, and disaster preparedness. He has presented multiple original inventions at national-level platforms, including the Ruhuna Invention &amp; Innovation Exhibition (RIIE).
               </p>
               <p className="about__bio">
-                A defining feature of his work is the progression from concept to Patents development. His flagship eco-friendly construction brick technology, which converts waste porcelain into high-strength building materials, is backed by the Southern Technology Incubation Centre (STIC) and is the subject of patent applications filed in Sri Lanka, Australia, and the UK.
+                A defining feature of his work is the progression from concept to Patents development. His flagship eco-friendly construction brick technology, which converts waste porcelain into high strength building materials, is backed by the Southern Technology Incubation Centre (STIC) and is the subject of patent applications filed in Australia and the UK.
               </p>
             </ScrollReveal>
 

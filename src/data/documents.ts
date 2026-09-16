@@ -41,7 +41,7 @@ export const documents: Document[] = [
     organisation: "IP Australia",
     date: "26 June 2026",
     category: "Patents",
-    description: "Official filing receipt for Patent Application No. 2026905817 filed with IP Australia for the Eco-Friendly High-Strength Construction Brick technology.",
+    description: "Official filing receipt for Patent Application No. 2026905817 filed with IP Australia for the Eco-Friendly High Strength Construction Brick technology.",
   },
   {
     id: "uk-patent",
@@ -49,7 +49,7 @@ export const documents: Document[] = [
     organisation: "UK Patents Office",
     date: "11 June 2026",
     category: "Patents",
-    description: "Official filing receipt for Application GB2613415.5 filed with the UK Patents Office for the Eco-Friendly High-Strength Construction Brick technology.",
+    description: "Official filing receipt for Application GB2613415.5 filed with the UK Patents Office for the Eco-Friendly High Strength Construction Brick technology.",
   },
   {
     id: "road-safety",

@@ -1,12 +1,16 @@
-import { useState } from 'react';
 import { ArrowUp, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const [showPhone, setShowPhone] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      const navHeight = 72;
+      const elementTop = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: Math.max(0, elementTop - navHeight),
+        behavior: 'smooth',
+      });
+    }
   };
 
   const scrollToTop = () => {
@@ -21,7 +25,7 @@ export default function Footer() {
     { label: 'Patents', id: 'ip' },
     { label: 'Recognition', id: 'recognition' },
     { label: 'Media & Endorsements', id: 'media' },
-    { label: 'Contact', id: 'footer' },
+    { label: 'Contact', id: 'contact' },
   ];
 
   return (

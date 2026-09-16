@@ -94,12 +94,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -252,6 +258,12 @@ ul {
   transition: all var(--transition-base);
   white-space: nowrap;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus,
+.btn:active {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -979,17 +991,7 @@ ul {
 
 /* Ring via the image's own ::before on the side wrapper */
 .about__image-side::before {
-  content: '';
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(197, 180, 149, 0.30);
-  animation: about-ring-spin 18s linear infinite;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 /* Outer glow halo */
@@ -1332,12 +1334,22 @@ ul {
   cursor: pointer;
   transition: all var(--transition-base);
   align-self: flex-start;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
 }
 
 .invention-card__details-btn:hover {
   background: var(--color-gold);
   color: var(--color-navy);
   border-color: var(--color-gold);
+}
+
+.invention-card__details-btn:focus,
+.invention-card__details-btn:active,
+.invention-card__details-btn:focus-visible {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* .invention-card__body is no longer rendered on the card face */
@@ -2830,13 +2842,28 @@ ul {
   .hero__inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
-    padding-top: calc(var(--nav-height) + 2rem);
+    padding-top: 0;
     min-height: auto;
   }
 
   .hero {
     min-height: auto;
+    display: block;
+    padding-top: calc(var(--nav-height) + 2.5rem);
     padding-bottom: var(--space-16);
+  }
+
+  .hero__bg-wallpaper {
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .hero__bg-overlay {
+    background: linear-gradient(180deg,
+        rgba(8, 12, 20, 0.55) 0%,
+        rgba(8, 12, 20, 0.85) 45%,
+        #080C14 100%);
   }
 
   .hero__content {
@@ -3052,11 +3079,63 @@ ul {
   }
 
   .hero__name {
-    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+    font-size: clamp(2.35rem, 8.5vw, 3.5rem);
+    line-height: 1.06;
+    margin-bottom: var(--space-3);
+  }
+
+  .hero__profession {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__profession strong {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.88);
   }
 
   .hero__statement {
     font-size: var(--text-lg);
+  }
+
+  /* Justified text becomes left-aligned on mobile to avoid spacing gaps */
+  .inv-modal__text,
+  .recognition__quote-text,
+  .recognition__content-p,
+  .recognition__callout,
+  .section-subtitle {
+    text-align: left;
+  }
+
+  /* Commendation PDF Modal responsive toolbar */
+  .pdf-modal__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .pdf-modal__meta {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .pdf-modal__buttons {
+    width: 100%;
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .pdf-modal__buttons .btn {
+    flex: 1 1 0;
+    justify-content: center;
+    min-height: 40px;
+    font-size: var(--text-xs);
+    padding: 8px var(--space-2);
   }
 
   /* About image scales down */
@@ -3093,8 +3172,12 @@ ul {
   }
 
   /* ---- HERO very small screens ---- */
+  .hero {
+    padding-top: calc(var(--nav-height) + 2rem);
+  }
+
   .hero__inner {
-    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-top: 0;
     gap: var(--space-6);
   }
 
@@ -3103,11 +3186,14 @@ ul {
   }
 
   .hero__name {
-    font-size: var(--text-3xl);
+    font-size: clamp(2.2rem, 9.5vw, 2.85rem);
+    line-height: 1.08;
   }
 
   .hero__profession {
-    font-size: var(--text-base);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
   }
 
   .hero__statement {
@@ -3213,6 +3299,11 @@ ul {
     padding: var(--space-4);
   }
 
+  .recognition__letter .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .recognition__quote-text {
     font-size: var(--text-lg);
   }
@@ -3269,9 +3360,19 @@ ul {
     padding: var(--space-4);
   }
 
+  .pdf-modal__buttons {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .pdf-modal__buttons .btn {
+    width: 100%;
+    min-height: 42px;
+  }
+
   .pdf-modal__frame-wrap {
-    min-height: 300px;
-    height: 50vh;
+    min-height: 280px;
+    height: 48vh;
   }
 
   /* ---- FOOTER very small screens ---- */
@@ -3581,5 +3682,72 @@ ul {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Section Scroll Margin for Fixed Navbar ── */
+section[id],
+footer[id] {
+  scroll-margin-top: 76px;
+}
+
+/* ── Contact Success Popup ── */
+.contact-popup {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  max-width: 450px;
+  background-color: #0B0C0E;
+  color: #FFFFFF;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  animation: slideInPopup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-popup {
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+@keyframes slideInPopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 }
