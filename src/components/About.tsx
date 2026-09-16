@@ -9,11 +9,14 @@ export default function About() {
           <div className="about__image-side">
             <ScrollReveal>
               <figure className="about__image-wrapper">
-                <img
-                  src="/assets/bulb-changer-colored.jpg"
-                  alt="A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire."
-                  className="about__invention-img"
-                />
+                <div className="about__image-card">
+                  <img
+                    src="/assets/bulb-changer-colored.jpg"
+                    alt="A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire."
+                    className="about__invention-img"
+                  />
+                  <div className="about__glass-sheen" aria-hidden="true" />
+                </div>
                 <figcaption className="about__image-caption">
                   A bulb changing device for replacing bulbs fitted in permanently mounted holders or holders attached to the end of a wire.
                 </figcaption>
