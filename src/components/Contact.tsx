@@ -118,7 +118,7 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="e.g. Dr. Arthur Silva / Apex Innovations"
+                  placeholder="Enter your name here"
                   value={formData.name}
                   onChange={handleChange}
                   className="contact__input"
@@ -132,7 +132,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="e.g. arthur@organization.com"
+                  placeholder="Enter your email here"
                   value={formData.email}
                   onChange={handleChange}
                   className="contact__input"
@@ -146,7 +146,7 @@ export default function Contact() {
                   type="text"
                   id="country"
                   name="country"
-                  placeholder="e.g. Sri Lanka, United States, Germany..."
+                  placeholder="Enter your country here"
                   value={formData.country}
                   onChange={handleChange}
                   className="contact__input"
