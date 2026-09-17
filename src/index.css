@@ -740,19 +740,7 @@ ul {
   box-shadow: 0 0 8px var(--color-gold);
 }
 
-.navbar__mobile-link--cta {
-  margin-top: 8px;
-  justify-content: center;
-  background: var(--color-gold);
-  color: #0B0C0E !important;
-  font-weight: 600;
-  border-radius: var(--radius-full);
-}
 
-.navbar__mobile-link--cta:hover {
-  background: var(--color-gold-lt);
-  color: #0B0C0E !important;
-}
 
 /* ============================================================
    HERO
