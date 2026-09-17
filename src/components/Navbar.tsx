@@ -224,17 +224,16 @@ export default function Navbar() {
       >
         <div className="navbar__mobile-inner">
           {navLinks.map((link) => {
-            const isCta = link.href === '#contact';
             const isActive = activeSection === link.href.replace('#', '');
             return (
               <button
                 key={link.href}
                 type="button"
-                className={`navbar__mobile-link ${isCta ? 'navbar__mobile-link--cta' : ''} ${isActive ? 'active' : ''}`}
+                className={`navbar__mobile-link ${isActive ? 'active' : ''}`}
                 onClick={() => handleLinkClick(link.href)}
               >
                 <span>{link.label}</span>
-                {isActive && !isCta && <span className="navbar__mobile-active-dot" />}
+                {isActive && <span className="navbar__mobile-active-dot" />}
               </button>
             );
           })}
