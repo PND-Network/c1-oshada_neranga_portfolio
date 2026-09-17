@@ -179,7 +179,7 @@ export default function Contact() {
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder="e.g. Proposal for Flood Detection Infrastructure Partnership"
+                  placeholder="Enter your subject here"
                   value={formData.subject}
                   onChange={handleChange}
                   className="contact__input"
@@ -193,7 +193,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={6}
-                  placeholder="Provide details regarding your inquiry, technical interest, or collaboration scope..."
+                  placeholder="Enter your message here"
                   value={formData.message}
                   onChange={handleChange}
                   className="contact__textarea"
